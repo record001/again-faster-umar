@@ -1,0 +1,119 @@
+{{ "style.footer.css" | asset_url | stylesheet_tag}}
+<style>
+   .footer {
+    background: {{ section.settings.footer_background }} ;  
+   }
+</style>
+
+
+<div class="footer">
+    <img class="footer__img" src="{{ section.settings.footer_img | img_url: '449x'}}" alt="footer_img">
+    <div class="container">
+        <div class="footer__grid">
+            <div class="footer__form">
+               <h4>{{ section.settings.newsletter }}</h4>
+            {% form 'contact' %}
+             <!--class = "contact-form" -->
+                <input type="email" name="" id="" placeholder="Enter your email" >
+                {% render "icon-right-arrow" class : "black" %} 
+              
+            {% endform %}
+
+            <div class="footer__icons">
+               {% for icon in section.blocks %}
+                  <a href="#!"><img src="{{ icon.settings.facebook | img_url: '16x'}}" alt=""></a>
+                  <!-- <a href="#!"><img src="{{ icon.settings.instagram | img_url: '16x'}}" alt=""></a> -->
+                  <!-- <a href="#!"><img src="{{ icon.settings.email | img_url: '16x'}}" alt=""></a> -->
+               {% endfor %}                           
+               {% for icon in section.blocks %}
+                  <a href="#!"><img src="{{ icon.settings.instagram | img_url: '16x'}}" alt=""></a>
+               {% endfor %}                           
+               {% for icon in section.blocks %}
+                  <a href="#!"><img src="{{ icon.settings.email | img_url: '16x'}}" alt=""></a>
+               {% endfor %}                           
+            </div>
+         </div>
+
+         <ul class="footer__list">
+            <h4 class="footer__list__title">{{ section.settings.footer_nav_first }}</h4>
+            <li class="footer__item"><a class="footer__link" href="#!">About Us</a></li>
+            <li class="footer__item"><a class="footer__link" href="#!">Blog</a></li>
+            <li class="footer__item"><a class="footer__link" href="#!">Gift Cards</a></li>
+            <li class="footer__item"><a class="footer__link" href="#!">Military/LEO Discount</a></li>
+            <li class="footer__item"><a class="footer__link" href="#!">Financing</a></li>
+            <li class="footer__item"><a class="footer__link" href="#!">Retail Store</a></li>
+         </ul>
+         <ul class="footer__list">
+            <h4 class="footer__list__title">{{ section.settings.footer_nav_second }}</h4>
+            <li class="footer__item"><a class="footer__link" href="#!">Introductions</a></li>
+            <li class="footer__item"><a class="footer__link" href="#!">Shipping</a></li>
+            <li class="footer__item"><a class="footer__link" href="#!">Returns and Warranty</a></li>
+            <li class="footer__item"><a class="footer__link" href="#!">Contact Us</a></li>
+            <li class="footer__item"><a class="footer__link" href="#!">Shop in Store</a></li>
+         </ul>
+        </div>
+
+        <span class="footer__copyright">©2020 Again Faster. All Rights Reserved</span>
+
+    </div>     
+</div>
+
+{% schema %}
+{
+   "name": "Footer",
+  "settings": [
+    {
+       "type": "image_picker",
+       "id": "footer_img",
+       "label": "Footer Img Bg"
+    },
+    
+    {
+       "type": "text",
+       "id": "newsletter",
+       "label": "Newsletter"
+    },
+    {
+       "type": "text",
+       "id": "footer_nav_first",
+       "label": "Footer Nav First"
+    },
+    {
+       "type": "text",
+       "id": "footer_nav_second",
+       "label": "Footer Nav Second"
+    },
+    {
+      "type": "color_background",
+      "id": "footer_background",
+      "label": "Background",
+      "default":"linear-gradient(#ffffff, #000000)"
+    }
+
+  ],
+  "blocks": [
+  {
+    "name": "Footer icons",
+    "type": "text",
+    "settings": [
+      {
+         "type": "image_picker",
+         "id": "facebook",
+         "label": "Facebook"
+      },
+      {
+         "type": "image_picker",
+         "id": "instagram",
+         "label": "Instagram"
+      },
+      {
+         "type": "image_picker",
+         "id": "email",
+         "label": "Email"
+      }
+    ]
+  }
+]
+  
+}
+{% endschema %}

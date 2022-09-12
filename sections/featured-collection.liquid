@@ -1,0 +1,63 @@
+{{ "style.featured-collection.css" | asset_url | stylesheet_tag}}
+   <!-- Link Swiper's CSS -->
+   <link   rel="stylesheet"   href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+<div class="featured-collection">
+    <div class="container">
+        
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">                
+                {%- for collection in section.settings.collection_list -%}
+                <div class="swiper-slide">                    
+                    <img src="{{ collection.image | img_url: 'medium'}}" alt="">    
+                   <h3 class="featured-collection__title"> 
+                    {{ collection.title | link_to: collection.url }}
+                    {% render "icon-right-arrow", class: "hover-arrow" %}
+                   </h3>
+                </div>
+                {%- endfor -%} 
+                
+            </div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+
+    </div>     
+</div>
+
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<script>
+    var swiper = new Swiper(".mySwiper", {
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: true,
+      },  
+       slidesPerView: '{{ section.settings.products_to_show }}',
+        spaceBetween: 30,  
+    });
+ </script>
+
+ {% schema %}
+  {
+   "name": "featured collection",
+  "settings": [
+      {
+        "type": "collection_list",
+        "id": "collection_list",
+        "label": "Collections"
+        
+      },
+      {
+        "type": "range",
+        "id": "products_to_show",
+        "min": 2,
+        "max": 12,
+        "step": 1,
+        "default": 4,
+        "label": "Number of Products"
+      }
+    ]
+  }
+ {% endschema %}

@@ -1,0 +1,95 @@
+{
+  "sections": {
+    "hero": {
+      "type": "header-hero",
+      "settings": {
+        "header_hero_bg": "shopify:\/\/shop_images\/AF_Hero-full-2x.jpg",
+        "header_hero_title": "Team barbell",
+        "header_hero_desc": "Team Barbell was to design a piece of equipment that matches the performance and quality of other elite level competition bars.",
+        "header_hero_cta": "Explore",
+        "hero_button_link": ""
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection_list": [
+          "affiliate-outfitting",
+          "bumper-plates",
+          "garage-package",
+          "jumpers",
+          "squat-racks"
+        ],
+        "products_to_show": 4
+      }
+    },
+    "banner-half": {
+      "type": "banner-half",
+      "settings": {
+        "half_banner_img": "shopify:\/\/shop_images\/lifting-weights.jpg",
+        "half_banner_card_img": "shopify:\/\/shop_images\/jumping-over-weights.jpg",
+        "half_banner_card_subtitle": "Best seller",
+        "half_banner_card_title": "TRULY, AN ALL IN ONE BARBELL",
+        "half_banner_card_desc": "Design that matches the performance and quality of other elite level competition bars",
+        "half_banner_card_cta": "Shop weights"
+      }
+    },
+    "banner-full": {
+      "type": "banner-full",
+      "settings": {
+        "full_banner_bg": "shopify:\/\/shop_images\/full-banner.jpg",
+        "full_banner_title": "Training in comfort",
+        "full_banner_desc": "Incredibly soft Airlume combed and ringspun cotton + poly fabric provides excellent stretch and recovery during even the most intense workouts.",
+        "full_banner_cta": "shop now",
+        "full_banner_cta_url": "shopify:\/\/products\/affiliate-outfitting"
+      }
+    },
+    "166273903562c6bfdf": {
+      "type": "banner-card",
+      "blocks": {
+        "70d1c39c-542c-4dba-aa37-cc95a185c817": {
+          "type": "text",
+          "settings": {
+            "banner_card_img": "shopify:\/\/shop_images\/banner-card2.jpg",
+            "banner_card_title": "Professional gym",
+            "banner_card_action": "Shop Professional",
+            "banner_card_action_url": "shopify:\/\/products\/affiliate-outfitting"
+          }
+        },
+        "6e163404-fa54-475c-a6ab-082667fdec88": {
+          "type": "text",
+          "settings": {
+            "banner_card_img": "shopify:\/\/shop_images\/banner-card1.jpg",
+            "banner_card_title": "Home gym",
+            "banner_card_action": "Shop Home",
+            "banner_card_action_url": "shopify:\/\/products\/squat-rack"
+          }
+        }
+      },
+      "block_order": [
+        "70d1c39c-542c-4dba-aa37-cc95a185c817",
+        "6e163404-fa54-475c-a6ab-082667fdec88"
+      ],
+      "settings": {
+      }
+    },
+    "1662729284e79d2b65": {
+      "type": "banner-full",
+      "settings": {
+        "full_banner_bg": "shopify:\/\/shop_images\/full-banner2.jpg",
+        "full_banner_title": "Training in comfortkjhgf",
+        "full_banner_desc": "",
+        "full_banner_cta": "shop now",
+        "full_banner_cta_url": ""
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "featured-collection",
+    "banner-half",
+    "banner-full",
+    "166273903562c6bfdf",
+    "1662729284e79d2b65"
+  ]
+}

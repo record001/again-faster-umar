@@ -1,0 +1,33 @@
+{{ "style.header-nav.css" | asset_url | stylesheet_tag}}
+
+<nav class="header__nav">
+  <div class="container">  
+    <div class="header__nav__grid">
+
+    <a class="nav__logo" href="#!"> {% render "icon-logo" %} </a>
+
+    <ul class="nav__list">
+      {% for link in linklists.again-faster.links %}
+         <li class="list__item"><a class="item__link" href="{{ link.url }}">{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+
+    <div class="nav__cta">
+      <div class="nav__cta__item">
+        {% render "icon-search" %}
+      </div>
+      <div class="nav__cta__item">
+        {% render "icon-bag" %}
+      </div>
+      <div class="nav__cta__item">
+        {% render "icon-account" %}
+      </div>
+       
+        
+    </div>
+  </div> 
+
+  </div>  
+</nav>
+
+ 

@@ -1,0 +1,57 @@
+{{ "style.header-hero.css" | asset_url | stylesheet_tag}}
+
+<div class="header-hero">
+    <div class="container">
+        <div class="header-hero__content">
+            <h1 class="header-hero__title">{{ section.settings.header_hero_title }}</h1>
+            <p class="header-hero__desc">{{ section.settings.header_hero_desc }}</p>
+
+            <a class="header-hero__cta" href="{{ section.settings.hero_button_link }}">{{ section.settings.header_hero_cta }}
+                {% render "icon-right-arrow" %}
+            </a>
+        </div>    
+    </div>     
+</div>
+
+<style>
+    .header-hero {
+        background-image: url('{{ section.settings.header_hero_bg.src | img_url : "2280x" }}');
+    }
+</style>
+
+{% schema %}
+{
+    "name": "Header Hero",
+    "settings" : [
+        {
+            "type": "image_picker",
+            "id": "header_hero_bg",
+            "label": "Header Hero Image"
+        },
+        {
+            "type": "text",
+            "id": "header_hero_title",
+            "label": "Header Hero Title",
+            "default": "Team barbell"
+        },
+        {
+            "type": "text",
+            "id": "header_hero_desc",
+            "label": "Header Hero Description",
+            "default": "Team Barbell was to design a piece of equipment that matches the performance and quality of other elite level competition bars."
+        },
+        {
+            "type": "text",
+            "id": "header_hero_cta",
+            "label": "Header Hero action",
+            "default": "Explore"
+        },
+        {
+            "type": "url",
+            "id": "hero_button_link",
+            "label": "Button link"
+          }
+
+    ]
+}
+{% endschema %}

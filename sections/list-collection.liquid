@@ -1,0 +1,27 @@
+{{ "style.list-collection.css" | asset_url | stylesheet_tag }}
+
+<div class="list-collection">
+    <div class="container">
+           <div class="list-collection__grid">
+                {% for collection in section.settings.collection_list %}
+                    <div class="grid__item">
+                        <img src="{{ collection.image | img_url: 'medium' }}" alt="">
+                        <h4>{{ collection.title | link_to: collection.url}}</h4>
+                    </div>
+                {% endfor %}
+           </div> 
+    </div>     
+</div>
+
+{% schema %}
+{
+   "name": "List Of Collections",
+  "settings": [
+    {
+        "type": "collection_list",
+        "id": "collection_list",
+        "label": "Collections"
+    }
+  ]
+}
+{% endschema %}
