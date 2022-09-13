@@ -1,5 +1,5 @@
 .list-collection-hero {
- 
+ color: var(--color-black);
   padding: 80px 0 0px;
 }
 
@@ -7,7 +7,7 @@
   width: 100%;
   height: calc(100vh - 120px);
   display: grid;
-  grid-template-columns: 43% 45%;
+  grid-template-columns: 40% 45%;
   gap: 0 12%;
   justify-content: center;
 }
@@ -17,48 +17,40 @@
   flex-direction: column;
   justify-content: center;
 }
-.list-collection-hero__content h4 {
-  font-family: "Oswald";
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 168%;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-
-  color: #000000;
+.list-collection-hero__content h5{
   margin-bottom: 16px;
 }
-.list-collection-hero__content h1 {
-  font-family: "Open Sans";
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 62px;
-  letter-spacing: 0.175em;
-  text-transform: uppercase;
-
-  color: #000000;
+.list-collection-hero__content h2 {
   margin-bottom: 40px;
 }
 .list-collection-hero__content a {
-  font-family: "Open Sans";
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
   letter-spacing: 0.175em;
   text-transform: uppercase;
-  color: #000000;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  color: var(--color-black);
   width: 236px;
   height: 58px;
   border: 1px solid #000000;
   padding: 21px 24px;
+  transition: 300ms;
+
 }
+.list-collection-hero__content a:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  transition: 300ms;
+}
+
 .black {
     fill: black;
+    transition: 300ms;
+
+}
+.list-collection-hero__content a:hover .black path{
+  fill: white;
+  transition: 300ms;
 }
 
 .list-collection-hero__img {
@@ -73,9 +65,7 @@
 }
 .img__big-wrp .img__big {
   width: 100%;
-  /* max-height: 100%; */
   height: 90%;
-  /* object-fit: cover; */
 }
 .img__small-wpr {
   display: flex;
@@ -83,7 +73,6 @@
   bottom: 0;
   right: 0;
   width: 35%;
-  /* height: 100%; */
 }
 .img__small-wpr .img__small {
   width: 100%;

@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 75%;
+  width: 95%;
   margin: 29px auto 47px;
 }
 .collection__nav .nav__item a::after {
@@ -38,4 +38,8 @@
   letter-spacing: 0.175em;
   text-transform: uppercase;
   color: #c4c4c4;
+}
+
+.collection__nav .nav__item.active-collection a{
+  color: #000000;
 }

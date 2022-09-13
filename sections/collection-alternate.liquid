@@ -1,4 +1,6 @@
-{{ "style.collection-alternate.css" | asset_url | stylesheet_tag}}
+<!-- {{ "style.collection-alternate.css" | asset_url | stylesheet_tag}} -->
+{{ "style.list-collection-hero.css" | asset_url | stylesheet_tag}}
+{{ "style.list-collection.css" | asset_url | stylesheet_tag}}
 
 
 <div class="list-collection-hero">
@@ -6,9 +8,9 @@
             <div class="list-collection-hero__grid">
                 <div class="list-collection-hero__content">
 
-                    <h4>{{ collection.metafields.accentuate.eyebrow }}</h4>
-                    <h1>{{ collection.metafields.accentuate.title}}</h1>
-                    <a href="{{ collection.metafields.accentuate.cta_url }}">{{collection.metafields.accentuate.cta_label }}
+                    <h5>{{ collection.metafields.accentuate.eyebrow }}</h5>
+                    <h2>{{ collection.metafields.accentuate.title}}</h2>
+                    <a href="{{ collection.metafields.accentuate.cta_url }}" class="p2">{{collection.metafields.accentuate.cta_label }}
                         {% render "icon-right-arrow", class: "black" %}
                     </a>
                 </div>

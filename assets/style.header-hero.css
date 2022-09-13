@@ -16,21 +16,10 @@
 }
 
 .header-hero__title {
-  font-family: "Open Sans";
-  font-weight: 700;
-  font-size: 60px;
-  line-height: 130%;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  margin-bottom: 24px;
+    margin-bottom: 24px;
 }
 .header-hero__desc {
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 167.5%;
-  margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .header-hero__cta {
@@ -42,13 +31,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: 300ms;
 
-  font-family: "Open Sans";
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.175em;
-  text-transform: uppercase;
-  color: #ffffff;
+  color: var(--color-white);
+
+}
+.header-hero__cta:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  transition: 300ms;
+}
+.header-hero__cta:hover .hover-arrow path{
+  fill: black;
+  transition: 300ms;
 
 }

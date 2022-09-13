@@ -1,5 +1,6 @@
 .banner-card {
   padding: 120px 0;
+  color: var(--color-black);
 }
 .banner-card__grid {
   justify-content: center;
@@ -11,25 +12,16 @@
 .banner-card__item img {
   width: 100%;
 }
-.banner-card__item h2 {
-  font-family: "Open Sans";
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 130%;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #000000;
+.banner-card__item h3 {  
   margin: 24px 0;
 }
 .banner-card__item a {
     display: inline-block;
     padding-bottom: 8px;
     border-bottom: 1px solid #000;
-  font-family: "Open Sans";
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
+  
   letter-spacing: 0.175em;
   text-transform: uppercase;
-  color: #000000;
+  color: var(--color-black);
+
 }

@@ -14,12 +14,12 @@
               
             {% if section.settings.full_banner_desc !=blank %}
                
-            <p class="full-banner__desc"> {{ section.settings.full_banner_desc }}   </p>
+            <p > {{ section.settings.full_banner_desc }}   </p>
             {% endif %}
 
             {% if section.settings.full_banner_cta !=blank %}
-            <a class="full-banner__cta" href="{{ section.settings.full_banner_cta_url }}">{{ section.settings.full_banner_cta }}
-               {% render "icon-right-arrow" %}
+            <a class="p2 full-banner__cta" href="{{ section.settings.full_banner_cta_url }}">{{ section.settings.full_banner_cta }}
+               {% render "icon-right-arrow" class: "hover-arrow" %}
             </a>
             {% endif %}
 

@@ -6,7 +6,13 @@
 
         <ul class="collection__nav">
             {% for collection in collections %}
-              <li class="nav__item">{{- collection.title | link_to: collection.url }}</li>  
+              <li class="nav__item 
+              {% if collection.title == collection.url %}
+                active-collection
+              {% endif %}">
+                {{ collection.title | link_to: collection.url }}
+                </li>         
+
              {% endfor %}
         </ul>    
     </div>     

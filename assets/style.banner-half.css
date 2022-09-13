@@ -4,6 +4,7 @@
   grid-template-columns: 57.43% 33%;
   gap: 0 4.5%;
   width: 100%;
+  color: var(--color-black);
 }
 .half-banner__img img {
     width: 100%;
@@ -11,44 +12,23 @@
 .half-banner__card img{
     width: 100%;
 }
-.half-banner__card h4 {
-  font-family: "Oswald";
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 168%;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #000000;
+.half-banner__card h5 {
   margin-top: 40px;
 }
 
-.half-banner__card h2 {
-  font-family: "Open Sans";
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 130%;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #000000;
+.half-banner__card h3 {
   margin: 8px 0 16px;
 }
 
 .half-banner__card p {
-  font-family: "Open Sans";
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 167.5%;
-  color: #8f8f8f;
+   color: #8f8f8f;
   margin-bottom: 40px;
 }
 .half-banner__card a {
-  font-family: "Open Sans";
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
+  
   letter-spacing: 0.175em;
   text-transform: uppercase;
-  color: #000000;
+  color: var(--color-black);
   padding-bottom: 8px;
   border-bottom: 1px solid #000;
 }

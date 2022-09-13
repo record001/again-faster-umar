@@ -10,10 +10,10 @@
                 {%- for collection in section.settings.collection_list -%}
                 <div class="swiper-slide">                    
                     <img src="{{ collection.image | img_url: 'medium'}}" alt="">    
-                   <h3 class="featured-collection__title"> 
-                    {{ collection.title | link_to: collection.url }}
+                   <a href="{{ collection.url }}" class="h5 featured-collection__title"> 
+                    {{ collection.title  }}
                     {% render "icon-right-arrow", class: "hover-arrow" %}
-                   </h3>
+                   </a>
                 </div>
                 {%- endfor -%} 
                 

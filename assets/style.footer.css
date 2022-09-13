@@ -4,21 +4,20 @@
 .footer {
   padding: 80px 120px 24px;
   position: relative;
+  color: var(--color-black);
 }
 .footer__img {
   position: absolute;
   top: 30%;
   left: 0;
   width: 449px;
+  z-index: -1;
 }
 .footer h4 {
   font-family: "Work Sans";
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
+  
   letter-spacing: 0.165em;
   text-transform: uppercase;
-  color: #000000;
 }
 .footer__grid {
   display: flex;
@@ -46,11 +45,11 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 141.8%;
-  color: #000000;
   opacity: 0.5;
 }
 
 .footer__icons {
+  
   margin-top: 26px;
   width: 80px;
   display: flex;
@@ -64,10 +63,7 @@
 .footer__link {
   display: block;
   margin-bottom: 12px;
-  font-family: "Open Sans";
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 167.5%;
+  
 
   color: #7e7e7e;
 }
@@ -76,8 +72,6 @@
   margin-top: 70px;
   text-align: center;
   font-family: "Open Sans";
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 167.5%;
+  
   color: #c4c4c4;
 }

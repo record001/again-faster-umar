@@ -11,7 +11,7 @@
     <div class="container">
         <div class="footer__grid">
             <div class="footer__form">
-               <h4>{{ section.settings.newsletter }}</h4>
+               <h4 class="p2">{{ section.settings.newsletter }}</h4>
             {% form 'contact' %}
              <!--class = "contact-form" -->
                 <input type="email" name="" id="" placeholder="Enter your email" >
@@ -21,39 +21,37 @@
 
             <div class="footer__icons">
                {% for icon in section.blocks %}
-                  <a href="#!"><img src="{{ icon.settings.facebook | img_url: '16x'}}" alt=""></a>
-                  <!-- <a href="#!"><img src="{{ icon.settings.instagram | img_url: '16x'}}" alt=""></a> -->
-                  <!-- <a href="#!"><img src="{{ icon.settings.email | img_url: '16x'}}" alt=""></a> -->
+                  <a href="#!"><img src="{{ icon.settings.footer_icon | img_url: '16x'}}" alt="{{ icon.settings.footer_icon.alt }}"></a>
                {% endfor %}                           
-               {% for icon in section.blocks %}
+               <!-- {% for icon in section.blocks %}
                   <a href="#!"><img src="{{ icon.settings.instagram | img_url: '16x'}}" alt=""></a>
                {% endfor %}                           
                {% for icon in section.blocks %}
                   <a href="#!"><img src="{{ icon.settings.email | img_url: '16x'}}" alt=""></a>
-               {% endfor %}                           
+               {% endfor %}                            -->
             </div>
          </div>
 
          <ul class="footer__list">
             <h4 class="footer__list__title">{{ section.settings.footer_nav_first }}</h4>
-            <li class="footer__item"><a class="footer__link" href="#!">About Us</a></li>
-            <li class="footer__item"><a class="footer__link" href="#!">Blog</a></li>
-            <li class="footer__item"><a class="footer__link" href="#!">Gift Cards</a></li>
-            <li class="footer__item"><a class="footer__link" href="#!">Military/LEO Discount</a></li>
-            <li class="footer__item"><a class="footer__link" href="#!">Financing</a></li>
-            <li class="footer__item"><a class="footer__link" href="#!">Retail Store</a></li>
+            <li class="footer__item"><a class="p footer__link" href="#!">About Us</a></li>
+            <li class="footer__item"><a class="p footer__link" href="#!">Blog</a></li>
+            <li class="footer__item"><a class="p footer__link" href="#!">Gift Cards</a></li>
+            <li class="footer__item"><a class="p footer__link" href="#!">Military/LEO Discount</a></li>
+            <li class="footer__item"><a class="p footer__link" href="#!">Financing</a></li>
+            <li class="footer__item"><a class="p footer__link" href="#!">Retail Store</a></li>
          </ul>
          <ul class="footer__list">
             <h4 class="footer__list__title">{{ section.settings.footer_nav_second }}</h4>
-            <li class="footer__item"><a class="footer__link" href="#!">Introductions</a></li>
-            <li class="footer__item"><a class="footer__link" href="#!">Shipping</a></li>
-            <li class="footer__item"><a class="footer__link" href="#!">Returns and Warranty</a></li>
-            <li class="footer__item"><a class="footer__link" href="#!">Contact Us</a></li>
-            <li class="footer__item"><a class="footer__link" href="#!">Shop in Store</a></li>
+            <li class="footer__item"><a class="p footer__link" href="#!">Introductions</a></li>
+            <li class="footer__item"><a class="p footer__link" href="#!">Shipping</a></li>
+            <li class="footer__item"><a class="p footer__link" href="#!">Returns and Warranty</a></li>
+            <li class="footer__item"><a class="p footer__link" href="#!">Contact Us</a></li>
+            <li class="footer__item"><a class="p footer__link" href="#!">Shop in Store</a></li>
          </ul>
         </div>
 
-        <span class="footer__copyright">©2020 Again Faster. All Rights Reserved</span>
+        <span class="h5 footer__copyright">©2020 Again Faster. All Rights Reserved</span>
 
     </div>     
 </div>
@@ -98,18 +96,8 @@
     "settings": [
       {
          "type": "image_picker",
-         "id": "facebook",
-         "label": "Facebook"
-      },
-      {
-         "type": "image_picker",
-         "id": "instagram",
-         "label": "Instagram"
-      },
-      {
-         "type": "image_picker",
-         "id": "email",
-         "label": "Email"
+         "id": "footer_icon",
+         "label": "Footer Social Icon"
       }
     ]
   }
