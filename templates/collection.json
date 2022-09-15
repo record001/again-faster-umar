@@ -1,11 +1,13 @@
- 
 {
   "sections": {
-    "collection":{
-      "type": "collection"
+    "collection": {
+      "type": "collection",
+      "settings": {
+        "product_column": 3
+      }
     }
   },
-  "order":[
+  "order": [
     "collection"
   ]
 }

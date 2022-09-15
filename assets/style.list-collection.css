@@ -35,3 +35,15 @@
     transform: scale(1.05);
     transition: 500ms;
 }
+.hover-arrow {
+  margin-left: 9px;
+  margin-top: 8px;
+}
+.list-collection__grid .grid__item h4:hover .hover-arrow path{
+  fill: black;
+}
+.list-collection__grid .grid__item h4 {
+ display: flex;
+ align-items: center;
+
+}

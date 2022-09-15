@@ -6,7 +6,9 @@
                 {% for collection in section.settings.collection_list %}
                     <div class="grid__item">
                         <img src="{{ collection.image | img_url: 'medium' }}" alt="">
-                        <h4>{{ collection.title | link_to: collection.url}}</h4>
+                        <h4>{{ collection.title | link_to: collection.url}}
+                            {% render "icon-right-arrow", class: "hover-arrow" %}
+                        </h4>
                     </div>
                 {% endfor %}
            </div> 

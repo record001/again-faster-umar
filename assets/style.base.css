@@ -24,10 +24,9 @@ a {
   padding: 0 40px;
 }
 
-/* typograpy */
 
-h1,
-.h1 {
+
+h1, .h1 {
   font-family: var(--primary-font-family);
   font-weight: 700;
   font-size: 60px;
@@ -35,8 +34,7 @@ h1,
   letter-spacing: 0.24em;
   text-transform: uppercase;
 }
-h2,
-.h2 {
+h2, .h2 {
   font-family: var(--primary-font-family);
   font-weight: 700;
   font-size: 40px;
@@ -44,8 +42,7 @@ h2,
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
-h3,
-.h3 {
+h3, .h3 {
   font-family: var(--primary-font-family);
   font-weight: 600;
   font-size: 24px;
@@ -53,8 +50,7 @@ h3,
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-h4,
-.h4 {
+h4, .h4 {
   font-family: var(--primary-font-family);
   font-weight: 400;
   font-size: 16px;
@@ -62,8 +58,7 @@ h4,
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
-h5,
-.h5 {
+h5,  .h5 {
   font-family: var(--secondary-font-family);
   font-weight: 300;
   font-size: 12px;

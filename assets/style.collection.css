@@ -1,33 +1,25 @@
 .collection {
   padding-top: 80px;
+  padding-bottom: 80px;
+  color: var(--color-black);
 }
 
 .collection__title {
-  font-family: "Open Sans";
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 130%;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #000000;
   text-align: center;
 }
 
 .collection__nav {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
   width: 95%;
   margin: 29px auto 47px;
 }
-.collection__nav .nav__item a::after {
-    content: "/";
-    margin-left: 7px;
+/* .collection__nav .nav__item a::after {
+  content: "/";
+  margin-left: 7px;
+} */
 
-}
-.collection__nav .nav__item a:active {
-    color: #000000;
-}
 .collection__nav .nav__item a {
   font-family: "Open Sans";
   font-style: normal;
@@ -38,8 +30,77 @@
   letter-spacing: 0.175em;
   text-transform: uppercase;
   color: #c4c4c4;
+  border-bottom: 2px solid #ffffff;
+
 }
 
-.collection__nav .nav__item.active-collection a{
-  color: #000000;
+.collection__grid {
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr); */
+  gap: 24px 16px;
+}
+.badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 90px;
+  height: 28px;
+  padding: 4px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.best-seller {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.free-shipping {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+.sale {
+  background-color: #9e0404;
+  color: var(--color-white);
+}
+.badge-wrp {
+  display: flex;
+}
+
+.collection__grid__item .img-wrp {
+  position: relative;
+  /* height: 554px; */
+  background-color: #f1f1f1;
+}
+.collection__grid__item .img-wrp img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.collection__grid__item .item__title a {
+  font-family: var(--secondary-font-family);
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 168%;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: var(--color-black);
+}
+.item__title {
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+.price {
+  margin-top: 8px;
+}
+
+#active {
+  color: var(--color-black);
+  border-bottom: 2px solid #C2A578;
+  padding-bottom: 5px;
+}
+
+.slash {
+  margin-left: 5px;
+  color:#c4c4c4 ;
 }
