@@ -5,7 +5,7 @@
         grid-template-columns: repeat({{ section.settings.product_column }}, 1fr);
   }
   .collection__grid__item .img-wrp {
-    height: {{ section.settings.card_height }}px ;
+    height: {{ section.settings.card_height }};
   }
 </style>
 
@@ -15,7 +15,7 @@
        
 
         <ul class="collection__nav">
-            {% for col in collections %}
+            {% for col in section.settings.collection_list %}
             
               <li class="nav__item">
                  <a href="{{col.url}}" 
@@ -79,14 +79,39 @@
         "default" : 3
       },
       {
-        "type": "range",
-        "min": 200,
-        "max": 600,
-        "unit": "px",
-        "step": 50,
+        "type": "select",
         "id": "card_height",
         "label": "Card Height",
-        "default" : 550
+        "options": [
+          {
+            "value": "550px",
+            "label": "550px"
+          },
+          {
+            "value": "450px",
+            "label": "450px"
+          },
+          {
+            "value": "400px",
+            "label": "400px"
+          },
+          {
+            "value": "350px",
+            "label": "350px"
+          },
+          {
+            "value": "300px",
+            "label": "300px"
+          }
+        ],
+        "default": "550px"
+      },
+      
+      {
+        "type": "collection_list",
+        "id": "collection_list",
+        "label": "Collections"
+        
       }
       
    ]

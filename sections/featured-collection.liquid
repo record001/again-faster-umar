@@ -1,6 +1,7 @@
-{{ "style.featured-collection.css" | asset_url | stylesheet_tag}}
-   <!-- Link Swiper's CSS -->
-   <link   rel="stylesheet"   href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+{{ "style.featured-collection.css" | asset_url | stylesheet_tag}}   
+
+  <!-- Link Swiper's CSS -->
+  <link   rel="stylesheet"   href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
 <div class="featured-collection">
     <div class="container">
@@ -25,8 +26,8 @@
 </div>
 
 
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+ <!-- Swiper JS -->
+ <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
 <script>
     var swiper = new Swiper(".mySwiper", {
@@ -38,6 +39,7 @@
         spaceBetween: 30,  
     });
  </script>
+
 
  {% schema %}
   {

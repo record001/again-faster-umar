@@ -1,6 +1,6 @@
 <!-- {{ "style.collection-alternate.css" | asset_url | stylesheet_tag}} -->
-{{ "style.list-collection-hero.css" | asset_url | stylesheet_tag}}
-{{ "style.list-collection.css" | asset_url | stylesheet_tag}}
+{{ "style.list-collection-hero.css" | asset_url | stylesheet_tag }}
+{{ "style.list-collection.css" | asset_url | stylesheet_tag }}
 
 
 <div class="list-collection-hero">
@@ -37,6 +37,9 @@
 
 <div class="list-collection">
 <!-- {{ collection.metafields.accentuate.collections_for_alter | split: '|' }} -->
+<script>
+    console.log({{ collection.metafields.accentuate.collections_for_alter | split: '|' }})
+</script>
 
     <div class="container">
            <div class="list-collection__grid">

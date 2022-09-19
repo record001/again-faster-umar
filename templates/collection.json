@@ -3,7 +3,17 @@
     "collection": {
       "type": "collection",
       "settings": {
-        "product_column": 3
+        "product_column": 4,
+        "card_height": 450,
+        "collection_list": [
+          "affiliate-outfitting",
+          "barbells",
+          "bumper-plates",
+          "garage-package",
+          "gds",
+          "jumpers",
+          "squat-racks"
+        ]
       }
     }
   },
