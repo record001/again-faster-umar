@@ -1,22 +1,24 @@
 {
-    "sections": {
-      "list-collection-hero": {
-        "type": "list-collection-hero",
-        "settings": {
-          "img_big": "shopify:\/\/shop_images\/list-collcetion-hero-img.jpg",
-          "img_small": "shopify:\/\/shop_images\/list-collcetion-hero-small-img.jpg",
-          "collection_hero_subtitle": "\/ Strength",
-          "collection_hero_title": "highest quality equipment for your strength training",
-          "collection_hero_cta": "Consultation",
-          "collection_hero_link": "shopify:\/\/products\/product-5"
-        }
-      },
-      "list-collection": {
-        "type":"list-collection"
+  "sections": {
+    "list-collection-hero": {
+      "type": "list-collection-hero",
+      "settings": {
+        "img_big": "shopify:\/\/shop_images\/list-collcetion-hero-img.jpg",
+        "img_small": "shopify:\/\/shop_images\/list-collcetion-hero-small-img.jpg",
+        "collection_hero_subtitle": "\/ Strength",
+        "collection_hero_title": "highest quality equipment for your strength training",
+        "collection_hero_cta": "Consultation",
+        "collection_hero_link": "shopify:\/\/products\/gds"
       }
     },
-    "order": [
-      "list-collection-hero",
-      "list-collection"
-    ]
-  }
+    "list-collection": {
+      "type": "list-collection",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "list-collection-hero",
+    "list-collection"
+  ]
+}
