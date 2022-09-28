@@ -9,23 +9,24 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   {{ content_for_header }} <!-- Header hook for plugins --> 
 
-
   <!-- fonts -->
   {{ "style.fonts.css" | asset_url | stylesheet_tag}}
 
   {{ "style.base.css" | asset_url | stylesheet_tag}}
+  {{ "style.card.css" | asset_url | stylesheet_tag}}
  
 
 
   
 </head>
 <body  class="{% if template == "index" %}home{% endif %}" >
+  
+  {% render "card-drawer"%}
 
   <header>
      {% section 'announcement-bar' %}
     {% section 'header-nav' %}
   </header>
-
   <main role="main">
     {{ content_for_layout }}
   </main>
@@ -36,6 +37,7 @@
 
 
   
+{{ "script.cart.js" | asset_url | script_tag }}
 
 </body>
 </html>

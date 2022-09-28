@@ -1,0 +1,73 @@
+.product-like {
+  padding: 80px 0;
+}
+.product-like h4 {
+  margin-bottom: 42px;
+}
+.badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 90px;
+    height: 28px;
+    padding: 4px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .best-seller {
+    background-color: var(--color-black);
+    color: var(--color-white);
+  }
+  
+  .free-shipping {
+    background-color: var(--color-white);
+    color: var(--color-black);
+  }
+  .sale {
+    background-color: #9e0404;
+    color: var(--color-white);
+  }
+  .badge-wrp {
+    display: flex;
+  }
+  
+  .product-like__grid__item .img-wrp {
+    position: relative;
+    height: 410px;
+    background-color: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .product-like__grid__item .img-wrp img:hover  {
+    transform: scale(1.1);
+    transition: 300ms;
+  }
+  .product-like__grid__item .img-wrp img {
+    max-width: 100%;
+    max-height: 100%;
+    transition: 300ms;
+
+  }
+  .product-like__grid__item .item__title a {
+    font-family: var(--secondary-font-family);
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 168%;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  
+    color: var(--color-black);
+  }
+  .item__title {
+    margin-bottom: 8px;
+    margin-top: 8px;
+  }
+  .price {
+    margin-top: 8px;
+  }
+
+     
+  

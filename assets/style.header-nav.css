@@ -50,3 +50,24 @@
   justify-content: center;
   gap: 0 19px;
 }
+.nav__cta__item {
+  cursor: pointer;
+}
+#bag {
+  position: relative;
+}
+#bag #bag_counter {
+  position: absolute;
+  background-color: rgba(40, 37, 37, 0.808);
+  color: white;
+  width: 12px;
+  height: 12px;
+  font-size: 10px;
+  text-align: center;
+  font-family: var(--primary-font-family);
+  border-radius: 3px;
+  right: -6px;
+  top: -8px;
+  pointer-events: none;
+
+}

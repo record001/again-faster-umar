@@ -3,9 +3,19 @@
       "product-hero": {
         "type": "product-hero"
        
+      },
+      "product-body": {
+        "type": "product-body"
+       
+      },
+      "product-like": {
+        "type": "product-like"
+       
       }
     },
     "order": [
-        "product-hero"
+        "product-hero",
+        "product-body",
+        "product-like"
     ]
   }

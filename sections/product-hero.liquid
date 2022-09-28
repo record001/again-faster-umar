@@ -1,34 +1,3 @@
-<!-- {% assign current_variant = product.selected_or_first_available_variant %}
-{% assign featured_image = current_variant.featured_image | default: product.featured_image %}
-<img src="{{ featured_image | img_url: 'large' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
-{% for image in product.images %}
-  <a href="{{ image.src | img_url: 'large' }}">
-    <img src="{{ image.src | img_url: 'compact' }}" alt="{{ image.alt | escape }}">
-  </a>
-{% endfor %}
-<h1>{{ product.title }}</h1>
-{{ product.content }}
-
-<form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
-  <select name="id" id="productSelect">
-    {% for variant in product.variants %}
-      {% if variant.available %}
-        <option value="{{ variant.id }}">
-          {{ variant.title }} - {{ variant.price | money_with_currency }}
-        </option>
-      {% else %}
-        <option disabled="disabled">
-          {{ variant.title }} - sold out
-        </option>
-      {% endif %}
-    {% endfor %}
-  </select>
-  {{ current_variant.price | money }}
-  <label for="Quantity">quantity</label>
-  <input type="number" id="Quantity" name="quantity" value="1" min="1">
-  <button type="submit" name="add" id="AddToCart">Add to cart</button>
-</form>
-<div>{{ product.description }}</div> -->
 {{ "style.product-hero.css" | asset_url | stylesheet_tag }}
 
  <!-- Link Swiper's CSS -->
@@ -37,7 +6,7 @@
 
 <div class="product-hero ">
     <div class="product-hero__grid product">
-      
+            
         <div class="product__gallary">
           <div class="swiper mySwiper">
             <div class="swiper-wrapper">
@@ -51,14 +20,10 @@
           </div>
           <div class="swiper-pagination"></div>
         </div>
-        
-      
+              
         <div class="product__datails">
-
-          <h3 >{{ product.title }}</h3>
-          {% for variant in product.variants %} 
-            <p class="product__price">{{ variant.price | money }}</p>
-          {% endfor %}
+          <h3 >{{ product.title }}</h3>        
+            <p class="product__price">{{ product.price | money }}</p>        
          
           <div class="review">
             {% render "icon-star" %}   <p>18 reviews</p>
@@ -71,19 +36,22 @@
              {{ product.description }}
           </p>
 
-          {% form 'product', product %}
+          <form  class="product-form" id="form" data-id="{{product.has_only_default_variant}}">         
           
              {% if product.has_only_default_variant %}
-               {{ product.title }} <span> does not have any variants</span>
+                <span id="{{ product.selected_or_first_available_variant.id }}"
+                 class="no-variant"  > </span>
               {% else %} 
                 <div class="product-options">                  
-                 {% for variant in product.variants %}  
-                
+                 {% for variant in product.variants %}                
                     <label class="option-wrp" >
                       <input type="radio" id="{{ variant.id }}" 
-                      name="select_one" class="option" 
+                      name="select_one" class="option"                                          
+                      value="{{ variant.id }}"  
+                                        
                       {% if variant == product.selected_or_first_available_variant %} checked {% endif %}  
-                      {% if variant.inventory_quantity == 0 %} disabled {% endif %}           >
+                      {% if variant.inventory_quantity == 0 %} disabled {% endif %}   >
+
                       <span class="p option__text">{{ variant.title }}</span>
                     </label>                          
                                          
@@ -92,22 +60,26 @@
              {% endif %}  
 
               <p class="free-shipping">Available for Free shipping!</p>
+              <button id="add_card_btn" type="submit" class="p2 add-card-btn" >Add to cart</button>
+        
+          </form>
 
-            <input type="submit" value="Add to cart" class="p2 add-card-btn">
-          {% endform %}   
+          {% assign frequent_product = product.metafields.accentuate.frequent_product | split: "|"%}
+          {% if frequent_product.size >0 %}
+            
           
           <h4>Frequently bought with</h4>
           <div class="frequently-bought-with">
-            {% assign featured_product = product.metafields.accentuate.frequent_product | split: "|"%}
-            {% for product in featured_product %}          
+            {% for product in frequent_product %}          
             
-            <div class="card-wrp">
+            <div class="card-wrp" >
               <div class="img-wpr">
                 <img src="{{ all_products[product].featured_image | img_url:"medium" }}" alt="">
               </div>
               <div class="card-context">
                 <p> {{ all_products[product].title }}</p>
-                <a href="">Add to Cart</a>
+                <button  class="fbw_add_to_cart"
+                 value="{{ all_products[product].selected_or_first_available_variant.id }}" >Add to Cart</button>
               </div>
             </div>
                        
@@ -115,6 +87,7 @@
 
             
           </div>
+          {% endif %}
         
     
         </div>
@@ -138,4 +111,74 @@
        clickable: true,
      },
    });
+ </script>
+
+ <script>
+  let variant = {{ product.variants | json }}
+  // change prices depending on the variant
+  let option_arr = document.querySelectorAll(".option")
+  let variant_price = document.querySelector(".product__price")
+   for (let i = 0; i < option_arr.length; i++) {
+     if(option_arr[i].checked) {
+      variant_price.innerHTML = `$${variant[i].price/100}.00`
+     }
+     option_arr[i].addEventListener("click", e => {
+        if(e.target.id == variant[i].id) {
+          variant_price.innerHTML = `$${variant[i].price/100}.00`
+        }
+
+      })
+    
+   }
+
+  //  function toggleCart() {
+  //   cart.classList.toggle("on")
+  //   body.classList.add("body-hover")
+  //   cart_blur.classList.add("db")
+  //  }
+  //  function addToCart(id, qtty) {
+  //   let form_data = {
+  //     'items': [{
+  //       'id': id,
+  //       'quantity': qtty
+  //       }]
+  //     };
+  //     fetch( window.Shopify.routes.root + 'cart/add.js', {
+  //           method: 'POST',
+  //           headers: {
+  //             'Content-Type': 'application/json'
+  //           },
+  //           body: JSON.stringify(form_data)
+  //     })
+  //     .then(response => {
+  //       this.toggleCart()
+  //       // getDetails()
+  //       return response.json();
+
+  //     })
+  //     .then(data => {
+  //       console.log(data);
+  //     })     
+  //     .catch((error) => {
+  //       console.error('Error:', error);
+  //     });
+  //  }
+  
+  //  //  freqently bought with section >>> add to cart   
+  // let fbw_add_to_cart = document.querySelectorAll(".fbw_add_to_cart")
+  // fbw_add_to_cart.forEach(item => {
+  //   item.addEventListener("click", e => {
+  //     addToCart(e.target.value, 1)      
+      
+  //   })
+  // })
+  // //  form add to cart
+  //  let form = document.querySelector("#form")  
+  //  form.addEventListener("submit", (e)=> {
+  //     e.preventDefault()
+  //    let var_id = form.querySelector(".option:checked").value
+  //    addToCart(var_id, 1)        
+
+  //   })
+
  </script>

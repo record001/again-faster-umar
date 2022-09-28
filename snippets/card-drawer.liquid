@@ -1,0 +1,164 @@
+ <div class="blur"> </div>
+ <div class="cart">
+        <img class="close__cart" src="{{ "x.svg" | asset_url }}" alt="">
+        <h4 class="cart__title"> My Cart</h4>
+       
+  
+   
+     
+    <div class="cart__full" id="cart_full" >
+      <div class="cart__content">
+<!--             
+        {% for item in cart.items %}
+       
+        <div class="cart__product" id="{{ item.variant_id }}" >
+          <div class="product__img">
+            <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
+
+          </div>
+          <div class="product__content">
+              <h5 id="product_title">{{ item.product.title }}</h5>
+              <p id="variant_title">{{ item.variant.title }}</p>
+
+              <div class="qty" >
+                <img id="minus" class="qty__controller" src="{{ "minus.svg" | asset_url }}" alt="minus">
+                <span id="qty" class="qty_class"> {{ item.quantity }} </span>
+                <img id="plus" class="qty__controller" src="{{ "plus.svg" | asset_url }}" alt="plus">
+              </div>
+          </div>
+          <div class="product__prc">
+              <p id="product_total_price">{{ item.price |times: item.quantity | money }}</p>
+              <img class="remove-product" src="{{ "remove.svg" | asset_url }}" alt="remove">
+          </div>
+
+        </div>  
+
+        {% endfor %} -->
+      </div>  
+
+          <div class="cart__footer">
+              <div class="subtotal-price">
+                <h4>subtotal</h4>
+                <p id="total_price"></p>
+              </div>
+              <p>Tax and shipping calculates at checkout.</p>
+              <div class="cart__affirm">
+                {% render "icon-affirm" %}  
+                 <p>pay as low as 56/mo <a href="#!">Learn More</a> </p>
+              </div>
+
+              <button class="checkout">Continue to Checkout</button>
+          </div>
+
+    </div>
+   
+
+
+    <div class="cart__empty">
+        <h4>Your Cart is Empty</h4>
+        <button>Shop Best Sellers</button>
+    </div>
+  
+       
+ </div>
+
+
+
+
+<!-- 
+<script>
+  //  function for change the cart
+  let cart_full = document.querySelector(".cart__full")
+  let cart__product = document.querySelector(".cart__product")
+async function getDatails() {
+     
+    let response = await fetch(window.Shopify.routes.root + 'cart.js');
+    let data = await response.json();
+    data.items.forEach(item => {
+      console.log(item.title);      
+        // cart__product.innerHTML = `        
+      
+        //     <div class="product__img">
+        //       <img src="${item.image}" alt="${item.title}">
+
+        //     </div>
+        //     <div class="product__content">
+        //         <h5>${item.product.title}</h5>
+        //          <p>${ item.variant.title}</p>
+
+        //         <div class="qty" >
+        //           <img id="minus" class="qty__controller" src="{{ "minus.svg" | asset_url }}" alt="minus">
+        //            <span id="qty"> ${ item.quantity } </span>
+        //            <img id="plus" class="qty__controller" src="{{ "plus.svg" | asset_url }}" alt="plus">
+        //         </div>
+        //     </div>
+        //     <div class="product__prc">
+        //         <p>$${item.price * item.quantity}</p>
+        //         <img class="remove-product" src="{{ "remove.svg" | asset_url }}" alt="remove">
+        //     </div>
+       
+        
+        // `      
+      });
+      // cart_full.appendChild(cart__product)
+    return data;
+
+      
+
+  }
+
+  function changeCart(id, qtty) {
+      let form_data = {
+                'id': id,
+                'quantity': qtty
+              }
+     fetch( window.Shopify.routes.root + 'cart/change.js', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(form_data)
+      })
+      .then(response => {
+        // getDatails()        
+        return  response.json();
+      })
+      .then(data => {
+        console.log(data);
+      })  
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+
+     
+
+    }
+    
+    
+    let remove_product = document.querySelectorAll(".remove-product")
+    let qty = document.querySelectorAll("#qty")
+    let minus = document.querySelectorAll("#minus")
+    let plus = document.querySelectorAll("#plus")
+    
+    for (let i = 0; i < remove_product.length; i++) {
+       // remove product from cart
+      remove_product[i].addEventListener("click", e=> {
+          changeCart(e.target.parentElement.parentElement.id, 0)     
+      })
+
+    // changing the quantity
+      minus[i].addEventListener("click", e=> {
+        changeCart(e.target.parentElement.parentElement.parentElement.id, Number(qty[i].textContent)-1) 
+      })
+      plus[i].addEventListener("click", e=> {
+        changeCart(e.target.parentElement.parentElement.parentElement.id,  Number(qty[i].textContent)+1)   
+      })
+
+      
+    }
+
+   
+    
+   
+   
+</script> -->

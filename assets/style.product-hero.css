@@ -3,6 +3,11 @@
   padding-top: 52px;
 }
 
+.not_allowed {
+  opacity: 0.5;
+  pointer-events: none;
+  
+}
 .product-hero__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -142,7 +147,7 @@
   flex-direction: column;
   justify-content: center;
 }
-.card-context a {
+.card-context button {
   font-family: var(--primary-font-family);
   font-weight: 300;
   font-size: 14px;
@@ -150,6 +155,9 @@
   text-decoration-line: underline;
 
   color: var(--color-black);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 .card-context p {
   color: var(--color-black);
