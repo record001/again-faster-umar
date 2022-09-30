@@ -10,12 +10,14 @@
     <img class="footer__img" src="{{ section.settings.footer_img | img_url: '449x'}}" alt="footer_img">
     <div class="container">
         <div class="footer__grid">
-            <div class="footer__form">
+         <div class="footer__form">
                <h4 class="p2">{{ section.settings.newsletter }}</h4>
-            {% form 'contact' %}
-             <!--class = "contact-form" -->
-                <input type="email" name="email" id="email" placeholder="Enter your email" >
-                {% render "icon-right-arrow" class : "black" %} 
+            {% form 'customer' %}
+                <input name="contact[tags]" type="hidden" value="newsletter" />
+                <input type="email" name="contact[email]" id="email" placeholder="Enter your email" />
+                <button class="submit-btn" type="submit">
+                   {% render "icon-right-arrow" class : "black" %}
+                </button>
               
             {% endform %}
 
@@ -23,12 +25,7 @@
                {% for icon in section.blocks %}
                   <a href="#!"><img src="{{ icon.settings.footer_icon | img_url: '16x'}}" alt="{{ icon.settings.footer_icon.alt }}"></a>
                {% endfor %}                           
-               <!-- {% for icon in section.blocks %}
-                  <a href="#!"><img src="{{ icon.settings.instagram | img_url: '16x'}}" alt=""></a>
-               {% endfor %}                           
-               {% for icon in section.blocks %}
-                  <a href="#!"><img src="{{ icon.settings.email | img_url: '16x'}}" alt=""></a>
-               {% endfor %}                            -->
+               
             </div>
          </div>
 

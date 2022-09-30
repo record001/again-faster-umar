@@ -9,6 +9,9 @@
 .half-banner__img img {
     width: 100%;
 }
+.half-banner__card {
+  padding-top: 80px;
+}
 .half-banner__card img{
     width: 100%;
 }

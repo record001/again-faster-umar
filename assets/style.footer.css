@@ -11,7 +11,7 @@
   top: 30%;
   left: 0;
   width: 449px;
-  z-index: -1;
+  z-index: 1;
 }
 .footer h4 {
   font-family: "Work Sans";
@@ -22,6 +22,10 @@
 .footer__grid {
   display: flex;
   justify-content: space-between;
+}
+.submit-btn {
+  background-color: transparent;
+  border: none;
 }
 .footer__form .contact-form {
   position: relative;

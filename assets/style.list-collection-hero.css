@@ -20,6 +20,10 @@
 .list-collection-hero__content h5{
   margin-bottom: 16px;
 }
+.list-collection-hero__content h5 span {
+  color: #C2A578;
+  margin-right: 4px;
+}
 .list-collection-hero__content h2 {
   margin-bottom: 40px;
 }
