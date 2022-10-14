@@ -9,11 +9,26 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   {{ content_for_header }} <!-- Header hook for plugins --> 
 
-  <!-- fonts -->
+  <style>
+             {% assign header_font = settings.heading_font -%}
+            {{ header_font | font_face }}
+
+            {% assign body_text_font = settings.base_font_new -%}
+            {{ body_text_font | font_face }}
+
+    :root {        
+               
+            --primary-font-family: {{- header_font.family  -}};
+            --secondary-font-family: {{- body_text_font.family  -}}; 
+          }
+  </style>
+
+  <!-- fonts.css is not used, instate theme settings is used above-->
   {{ "style.fonts.css" | asset_url | stylesheet_tag}}
 
-  {{ "style.base.css" | asset_url | stylesheet_tag}}
-  {{ "style.card.css" | asset_url | stylesheet_tag}}
+  {{ "style.base.css" | asset_url | stylesheet_tag }}
+  {{ "style.card.css" | asset_url | stylesheet_tag }}
+  {{ "style.yotpo.css" | asset_url | stylesheet_tag }}
  
 
 
@@ -25,6 +40,7 @@
 
   <header>
      {% section 'announcement-bar' %}
+   
     {% section 'header-nav' %}
   </header>
   <main role="main">
@@ -38,6 +54,46 @@
 
   
 {{ "script.cart.js" | asset_url | script_tag }}
+
+
+<script>
+  // async function getP() {
+  //   fetch("https://api.rechargeapps.com/products", {
+  //   method: "GET",
+  //   headers: {
+  //     "X-Recharge-Version": "2021-11",
+  //     "X-Recharge-Access-Token": "sk_1x1_b5116242cc31ee5f370e91f4bbb994f6410c27c48a61041c0d7ba7ca7c6f3ee6"
+  //   }
+  // }).then((response) => {      
+  //     return response.json();
+  //   })
+  //   .then((data) => {    
+  //     console.log(data);    
+
+  //   })
+  // }
+  // getP()
+
+
+//   let schema = '{ "customer": {}, "products": { "base_source": "store_settings", "page": 1, "limit": 15 }, "products_count": { "base_source": "store_settings" }, "settings": {}, "store": {} }';
+//   let url = `{{ shopify_proxy_url if proxy_redirect else "" }}/portal/{{ customer.hash }}/request_objects?token=sk_1x1_b5116242cc31ee5f370e91f4bbb994f6410c27c48a61041c0d7ba7ca7c6f3ee6&schema=${schema}`;
+
+// fetch(url)
+//   .then((response) => response.json())
+//   .then((showData) => {
+//     // Successful request made
+//     console.log(showData);
+//   })
+//   .catch((error) => {
+//     // Request failed
+//     console.error(error);
+//   });
+
+
+
+
+
+</script>
 
 </body>
 </html>

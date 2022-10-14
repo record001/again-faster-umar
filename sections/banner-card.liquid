@@ -3,12 +3,12 @@
     <div class="container">
         <div class="banner-card__grid">
             {% for item in section.blocks %}
-            {% render "banner-card-item",
-                img:item.settings.banner_card_img, 
-                title: item.settings.banner_card_title,
-                card_cta: item.settings.banner_card_action,
-                card_url: item.settings.banner_card_action_url
-            %}
+               {% render "banner-card-item",
+                  img:item.settings.banner_card_img, 
+                  title: item.settings.banner_card_title,
+                  card_cta: item.settings.banner_card_action,
+                  card_url: item.settings.banner_card_action_url
+               %}
             {% endfor %}
             
         </div>

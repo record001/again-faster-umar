@@ -1,5 +1,6 @@
 {{ "style.product-hero.css" | asset_url | stylesheet_tag }}
-
+<!-- YOTPO CDN -->
+<script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/XUDrDbLaPGxUHd5tDOsMrE1yY8UD951OhuSbkq3s" async></script>
  <!-- Link Swiper's CSS -->
  <link
  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
@@ -13,20 +14,23 @@
                 {% for item in product.images %}
                     <div class="swiper-slide">
                         <img src="{{item | img_url: "master" }}" alt="{{ item.alt | escape}}">
-                    </div>                        
+                    </div>   
                 {% endfor %}             
+                                   
              
             </div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
+
               
         <div class="product__datails">
           <h3 >{{ product.title }}</h3>        
             <p class="product__price">{{ product.price | money }}</p>        
          
           <div class="review">
-            {% render "icon-star" %}   <p>18 reviews</p>
+            <!-- {% render "icon-star" %}   <p>18 reviews</p> -->
+            <div class="yotpo-widget-instance" data-yotpo-instance-id="250054" data-yotpo-product-id="{{product.id}}"></div>
           </div>
           <div class="review">
             {% render "icon-affirm" %}   <p>pay as low as 56/mo Learn More</p>
@@ -42,23 +46,32 @@
                 <span id="{{ product.selected_or_first_available_variant.id }}"
                  class="no-variant"  > </span>
               {% else %} 
-                <div class="product-options">                  
-                 {% for variant in product.variants %}                
-                    <label class="option-wrp" >
-                      <input type="radio" id="{{ variant.id }}" 
-                      name="select_one" class="option"                                          
-                      value="{{ variant.id }}"  
-                                        
-                      {% if variant == product.selected_or_first_available_variant %} checked {% endif %}  
-                      {% if variant.inventory_quantity == 0 %} disabled {% endif %}   >
+                <div class="product-options">                                                
+                  
+                  {% for variant in product.variants %}                
+                      <label class="option-wrp" >
+                        <input type="radio" id="{{ variant.id }}" 
+                        name="select_one" class="option"                                          
+                        value="{{ variant.id }}"  
+                                          
+                        {% if variant == product.selected_or_first_available_variant %} checked {% endif %}  
+                        {% if variant.inventory_quantity == 0 %} disabled {% endif %}   >
 
-                      <span class="p option__text">{{ variant.title }}</span>
-                    </label>                          
-                                         
-                  {% endfor %}                 
-              </div>
-             {% endif %}  
-
+                        <span class="p option__text">{{ variant.title }}</span>
+                      </label>                          
+                                          
+                  {% endfor %}  
+                 </div>
+                {% endif %}
+                <!-- <div class="rc-widget-injection-parent"></div> -->
+                {% if product.selling_plan_groups.size >=1 %}
+                  <h2>bor</h2>
+                  {%else%}
+                  <h2>yo`q</h2>
+                {% endif %}
+                <script>
+                  console.log({{product.selling_plan_groups | json}});
+                </script>
               <p class="free-shipping">Available for Free shipping!</p>
               <button id="add_card_btn" type="submit" class="p2 add-card-btn" >Add to cart</button>
         
@@ -96,7 +109,14 @@
     </div>
 </div>
 
-
+{% schema %}
+{
+ "name": "for apps",
+ "blocks":[
+ {"type": "@app"}
+ ]
+}
+{% endschema %}
 
 
  <!-- Swiper JS -->
@@ -106,6 +126,7 @@
  <script>
    var swiper = new Swiper(".mySwiper", {
      direction: "vertical",
+     loop: true,
      pagination: {
        el: ".swiper-pagination",
        clickable: true,
@@ -131,54 +152,6 @@
     
    }
 
-  //  function toggleCart() {
-  //   cart.classList.toggle("on")
-  //   body.classList.add("body-hover")
-  //   cart_blur.classList.add("db")
-  //  }
-  //  function addToCart(id, qtty) {
-  //   let form_data = {
-  //     'items': [{
-  //       'id': id,
-  //       'quantity': qtty
-  //       }]
-  //     };
-  //     fetch( window.Shopify.routes.root + 'cart/add.js', {
-  //           method: 'POST',
-  //           headers: {
-  //             'Content-Type': 'application/json'
-  //           },
-  //           body: JSON.stringify(form_data)
-  //     })
-  //     .then(response => {
-  //       this.toggleCart()
-  //       // getDetails()
-  //       return response.json();
-
-  //     })
-  //     .then(data => {
-  //       console.log(data);
-  //     })     
-  //     .catch((error) => {
-  //       console.error('Error:', error);
-  //     });
-  //  }
   
-  //  //  freqently bought with section >>> add to cart   
-  // let fbw_add_to_cart = document.querySelectorAll(".fbw_add_to_cart")
-  // fbw_add_to_cart.forEach(item => {
-  //   item.addEventListener("click", e => {
-  //     addToCart(e.target.value, 1)      
-      
-  //   })
-  // })
-  // //  form add to cart
-  //  let form = document.querySelector("#form")  
-  //  form.addEventListener("submit", (e)=> {
-  //     e.preventDefault()
-  //    let var_id = form.querySelector(".option:checked").value
-  //    addToCart(var_id, 1)        
-
-  //   })
 
  </script>

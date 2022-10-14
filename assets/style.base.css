@@ -1,10 +1,13 @@
+
 :root {
   --color-white: #ffffff;
   --color-black: #000000;
   --color-gold: #c2a578;
-  --primary-font-family: "Open Sans";
-  --secondary-font-family: "Oswald";
+  
 }
+/* --primary-font-family: "Open Sans";
+  --secondary-font-family: "Oswald"; */
+  
 * {
   margin: 0;
   padding: 0;

@@ -32,7 +32,7 @@
                  
           {% for item in collection.products %}
           <div class="collection__grid__item">
-            
+            <a href="{{ item.url }}">
             <div class="img-wrp">
 
               <div class="badge-wrp">
@@ -55,7 +55,9 @@
            
             <h5 class="item__title"> {{ item.title | link_to: item.url }}</h5>
             {% render "icon-star"%}
+            
             <h5 class="price">{{ item.price | money }}</h5>
+          </a>
           </div> 
          
           {% endfor %}

@@ -41,17 +41,18 @@
 </script>
 
     <div class="container">
-           <div class="list-collection__grid">
+        <div class="list-collection__grid">
             {% assign selected_handles =  collection.metafields.accentuate.collections_for_alter | split: '|'  %}
-                {% for collection in selected_handles %}    
+            {% for collection in selected_handles %}    
                     <div class="grid__item">
-                        <img src="{{ collections[collection].image | img_url: 'medium' }}" alt="">
+                        <a href="{{collections[collection].url}}"><img src="{{ collections[collection].image | img_url: 'medium' }}" alt=""></a>
+                        
                         <h4>{{ collections[collection].title | link_to: collections[collection].url}}
                             {% render "icon-right-arrow", class: "hover-arrow" %}
                         </h4>
                      </div>    
-                {% endfor %}
+            {% endfor %}
            
-    </div>     
+         </div>     
 </div>
 

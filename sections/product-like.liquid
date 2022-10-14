@@ -1,4 +1,5 @@
 {{ "style.product-like.css" | asset_url | stylesheet_tag }}
+<script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/XUDrDbLaPGxUHd5tDOsMrE1yY8UD951OhuSbkq3s" async></script>
 
 <!-- Link Swiper's CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
@@ -50,6 +51,9 @@
   </div>     
 </div>
  
+  <!-- <div class="review-stars">
+    <div class="yotpo-widget-instance" data-yotpo-instance-id="250056" data-yotpo-product-id="{{product.id}}" data-yotpo-name="{{ product.title | escape }}" data-yotpo-url="{{ shop.url }}{{ product.url }}" data-yotpo-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}" data-yotpo-description="{{ product.description | escape }}"></div>
+  </div> -->
 {% endif %}
 
 
@@ -65,4 +69,7 @@
        clickable: true,
      },
    });
+
+   
+
  </script>

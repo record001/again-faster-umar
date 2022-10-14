@@ -1,0 +1,66 @@
+.yotpo-head .yotpo-reviews-by {
+    display: none !important;
+}
+#yotpo-app {
+    width: 100% !important;
+    margin: 0 auto;
+}
+.yotpo-main-widget-layout {
+    width: 80% !important;
+}
+.yotpo-display-l .yotpo-main-layout .yotpo-head .yotpo-headline, .yotpo-display-m .yotpo-main-layout .yotpo-head .yotpo-headline {
+    margin: 0 auto;
+}
+.yotpo-main-layout .yotpo-layout-header-wrapper {
+    justify-content: space-between !important;
+}
+.yotpo-bottom-line .yotpo-bottom-line-summary .yotpo-vertical-border {
+    display: none;
+}
+.yotpo-display-l .yotpo-review:not(.yotpo-media-modal-review), .yotpo-display-m .yotpo-review:not(.yotpo-media-modal-review) {
+    display: grid;
+    grid-template-columns: 25% 65%;
+    gap: 27px 10%;
+    position: relative;
+}
+.yotpo-display-l .yotpo-review:not(.yotpo-media-modal-review) .yotpo-review-center-panel .yotpo-review-rating-title .yotpo-review-star-rating, .yotpo-display-m .yotpo-review:not(.yotpo-media-modal-review) .yotpo-review-center-panel .yotpo-review-rating-title .yotpo-review-star-rating {
+    position: absolute;
+    left: 4px;
+    top: 68px;
+}
+.yotpo-display-l .yotpo-review:not(.yotpo-media-modal-review) .yotpo-review-center-panel .yotpo-review-rating-title .yotpo-review-title, .yotpo-display-m .yotpo-review:not(.yotpo-media-modal-review) .yotpo-review-center-panel .yotpo-review-rating-title .yotpo-review-title {
+    flex-basis: auto !important;
+}
+.yotpo-display-l .yotpo-review:not(.yotpo-media-modal-review) .yotpo-review-content, .yotpo-display-m .yotpo-review:not(.yotpo-media-modal-review) .yotpo-review-content {
+    margin: 0 !important;
+}
+.yotpo-display-l .yotpo-review:not(.yotpo-media-modal-review) .yotpo-review-center-panel, .yotpo-display-m .yotpo-review:not(.yotpo-media-modal-review) .yotpo-review-center-panel {
+    flex-basis: 70% !important;
+}
+.yotpo-display-l .yotpo-review:not(.yotpo-media-modal-review) .yotpo-review-right-panel, .yotpo-display-m .yotpo-review:not(.yotpo-media-modal-review) .yotpo-review-right-panel {
+    text-align: start !important;
+}
+.yotpo-review-border-smooth {
+    height: 2px !important;
+}
+
+.yotpo-star-rating .star-container svg {
+    width: 16px !important ;
+    height: 16px !important;
+}
+.yotpo-date-format {
+    color: #C4C4C4 !important;
+}
+
+#yotpo-main-widget-btn[data-v-1fafa3d2] {
+    width: 214px;
+    height: 43px;
+    border-radius: 0px !important;
+
+    font-weight: 400 !important;
+    text-transform: uppercase;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.175em;
+    background-color: #000000 !important;
+}

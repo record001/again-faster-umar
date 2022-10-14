@@ -43,7 +43,10 @@ async function getDetails() {
     document.querySelector(".cart__empty").style.display = "block"
   }
   let cart__item = ``;
+ 
   data.items.forEach((item) => {
+   
+   
     cart__item += `
       <div class="cart__product" id="${item.variant_id}" >
       <div class="product__img">
@@ -60,18 +63,30 @@ async function getDetails() {
           </div>
       </div>
       <div class="product__prc">
-          <p id="product_total_price">$${item.price / 100}.00</p>
+          <p id="product_total_price">$${item?.properties?._bundle_price ?(item.properties._bundle_price*item.quantity) / 100: item.line_price / 100}.00</p>
           <img data-id = ${item.variant_id} id ="remove_product" class="remove-product" src="https://cdn.shopify.com/s/files/1/0625/1184/1457/files/remove.svg?v=1664125727" alt="remove">
       </div>
 
       </div> 
       `;
+
+     
   });
-  document.querySelector("#total_price").textContent = `$${ data.total_price / 100}.00`;
+  // document.querySelector("#total_price").textContent = `$${ data.total_price / 100}.00`;
+  
   bag_counter.textContent = data.item_count
   cart__content.innerHTML = cart__item;
-}
 
+  setTimeout(()=> {
+    let x =document.querySelectorAll("#product_total_price")
+    let qwe = 0
+    x.forEach(item => {
+      qwe =qwe +Number(item.textContent.slice(1))
+    })
+    document.querySelector("#total_price").textContent = `$${qwe}.00`;
+  
+  },500)
+}
 
 async function changeCart(id, qtty) {
   let form_data = {
@@ -149,7 +164,7 @@ function addToCart(id, qtty) {
     });
 }
 
-let inventory_qty = 0
+
 
 //  freqently bought with section >>> add to cart
 let fbw_add_to_cart = document.querySelectorAll(".fbw_add_to_cart");
