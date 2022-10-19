@@ -19,6 +19,9 @@
 }
 .product__datails {
   height: calc(100vh - 92px);
+  padding: 20px 139px 20px 99px;
+  overflow-y: scroll;
+
 }
 
 .product__gallary .swiper-pagination-vertical.swiper-pagination-bullets {
@@ -41,9 +44,6 @@
   margin: 8% auto;
 }
 
-.product__datails {
-  padding: 20px 139px 20px 99px;
-}
 .product__price {
   margin: 8px 0;
 }
@@ -161,4 +161,47 @@
 }
 .card-context p {
   color: var(--color-black);
+}
+
+
+/* recharge styles */
+.recharge-wrp {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+}
+.recharge-label {
+  width: 70%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  background-color: #efe7e7;
+  padding: 0 15px;
+}
+.recharge-text {
+  font-family: var(--primary-font-family);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 167.5%;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.recharge-frequency {
+  
+  margin-top: 10px;
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+}
+#subscribe:checked + .recharge-frequency {
+  display: flex;
+}
+.recharge-frequency-label {
+  background-color: #ececec;
+  padding: 5px 10px;
+}
+.subscribe-price {
+  font-weight: 700;
+  margin-left: 10px;
 }

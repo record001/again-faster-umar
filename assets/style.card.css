@@ -73,7 +73,7 @@
   border-top: 1px solid #f1f1f1;
   border-bottom: 1px solid #f1f1f1;
   display: grid;
-  grid-template-columns: 120px 120px 1fr;
+  grid-template-columns: 120px 180px 1fr;
   gap: 0 16px;
 }
 .product__content h5 {
