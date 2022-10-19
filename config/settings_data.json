@@ -1,5 +1,31 @@
 {
   "current": {
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "Title": "20% OFF Sitewide until 9\/12"
+        }
+      },
+      "header-nav": {
+        "type": "header-nav",
+        "settings": {
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "footer_img": "shopify:\/\/shop_images\/F.png",
+          "newsletter": "NEWSLETTER",
+          "footer_nav_first": "AGAIN FASTER",
+          "footer_nav_second": "GET HELP",
+          "footer_background": "#EEEEEE"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Default": {
