@@ -1,0 +1,116 @@
+{
+  "current": {
+    "heading_font": "open_sans_n4",
+    "base_font_new": "oswald_n4",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "Title": "20% OFF Sitewide until 9\/12"
+        }
+      },
+      "header-nav": {
+        "type": "header-nav",
+        "settings": {}
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "c97c9865-ddc5-4577-b9f5-08ef11f32572": {
+            "type": "text",
+            "settings": {
+              "footer_icon": "shopify:\/\/shop_images\/Facebook.png"
+            }
+          },
+          "f3be12ed-8cfe-4f73-8c51-0dd4561a60e1": {
+            "type": "text",
+            "settings": {
+              "footer_icon": "shopify:\/\/shop_images\/Instagram.png"
+            }
+          },
+          "7d247960-5c06-464e-bc5e-69efa8ed1958": {
+            "type": "text",
+            "settings": {
+              "footer_icon": "shopify:\/\/shop_images\/mail.png"
+            }
+          }
+        },
+        "block_order": [
+          "c97c9865-ddc5-4577-b9f5-08ef11f32572",
+          "f3be12ed-8cfe-4f73-8c51-0dd4561a60e1",
+          "7d247960-5c06-464e-bc5e-69efa8ed1958"
+        ],
+        "settings": {
+          "footer_img": "shopify:\/\/shop_images\/F.png",
+          "newsletter": "Newsletter",
+          "footer_nav_first": "again faster",
+          "footer_nav_second": "Get help",
+          "footer_background": "#F1F1F1"
+        }
+      }
+    },
+    "content_for_index": [],
+    "blocks": {
+      "7570552984445421165": {
+        "type": "shopify:\/\/apps\/yotpo-product-photo-reviews\/blocks\/settings\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+        "disabled": false,
+        "settings": {}
+      },
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {}
+      },
+      "1386531382474587334": {
+        "type": "shopify:\/\/apps\/bundle-builder\/blocks\/bb-cart-integration\/78802baf-205d-4d1d-908c-fae911f24e36",
+        "disabled": true,
+        "settings": {
+          "placement": "below",
+          "hide_empty_line_items": false,
+          "font_size": 16,
+          "font_color": "",
+          "button_color": "",
+          "button_background": "",
+          "button_radius": 0,
+          "border_color": "#000000",
+          "background": "",
+          "heading": "Your cart contains {count} bundle",
+          "heading_plural": "Your cart contains {count} bundles",
+          "view_text": "View Details",
+          "modal_title": "Your bundle summary",
+          "modal_font_color": "#000000",
+          "modal_background": "#FFFFFF",
+          "modal_border_color": "#c4c4c4",
+          "modal_item_background": "",
+          "modal_item_content_background": "#f1f1f1",
+          "modal_item_product_background": "#ffffff",
+          "custom_css": ""
+        }
+      },
+      "14044569291296200651": {
+        "type": "shopify:\/\/apps\/bundle-builder\/blocks\/bb-cart-integration-custom\/78802baf-205d-4d1d-908c-fae911f24e36",
+        "disabled": true,
+        "settings": {
+          "theme_override": "887",
+          "page_cartItemBox": ".cart-body",
+          "page_cartItem": ".cart-item",
+          "page_cartSubtotal": "",
+          "page_cartOriginalTotal": "",
+          "page_checkoutButton": "",
+          "drawer_cartItemBox": "",
+          "drawer_cartItem": "",
+          "drawer_cartSubtotal": "",
+          "drawer_cartOriginalTotal": "",
+          "drawer_checkoutButton": "",
+          "cartItemPrice": "",
+          "cartItemLinePrice": "",
+          "cartItemQuantity": "",
+          "observeTargets": ""
+        }
+      }
+    }
+  },
+  "presets": {
+    "Default": {}
+  }
+}

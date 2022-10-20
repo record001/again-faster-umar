@@ -1,0 +1,75 @@
+{{ "style.product-like.css" | asset_url | stylesheet_tag }}
+<script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/XUDrDbLaPGxUHd5tDOsMrE1yY8UD951OhuSbkq3s" async></script>
+
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+{%- assign product_handle = product.metafields.accentuate.you_might_also_like | join: '|' | split: '|' -%}
+
+{% if product_handle != blank %}
+ 
+<div class="product-like">
+  <div class="container">
+     <h4>You might also like</h4> 
+              
+        <div class="swiper likedProducts">
+          <div class="swiper-wrapper product-like__grid">
+              {% for item in product_handle %}
+                <div class="swiper-slide product-like__grid__item">
+                  <div class="img-wrp">
+
+                    <div class="badge-wrp">
+                      {% for tag in all_products[item].tags %}
+                          {% if tag == 'Best Seller'%}
+                          <span class="p2 badge best-seller">Best Seller</span>
+                          {% endif %}
+                          {% if tag == 'Free Shipping'%}
+                          <span class="p2 badge free-shipping">Free Shipping</span>
+                          {% endif %}
+                          {% if tag == 'Sale'%}
+                          <span class="p2 badge sale">Sale</span>
+                          {% endif %}
+                        
+                        {% endfor %} 
+                    </div>                
+      
+                    <img src="{{ all_products[item].featured_image | img_url:"medium" }}" alt="">
+
+                  </div>
+                 
+                  <h5 class="item__title"> {{ all_products[item].title | link_to: all_products[item].url }}</h5>
+                  {% render "icon-star"%}
+                  <h5 class="price">{{ all_products[item].price | money }}</h5>
+                </div>
+
+              {% endfor %}
+
+          </div>
+                
+        </div>
+      
+  </div>     
+</div>
+ 
+  <!-- <div class="review-stars">
+    <div class="yotpo-widget-instance" data-yotpo-instance-id="250056" data-yotpo-product-id="{{product.id}}" data-yotpo-name="{{ product.title | escape }}" data-yotpo-url="{{ shop.url }}{{ product.url }}" data-yotpo-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}" data-yotpo-description="{{ product.description | escape }}"></div>
+  </div> -->
+{% endif %}
+
+
+ <!-- Swiper JS -->
+ <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+ <!-- Initialize Swiper -->
+ <script>
+   var swiper = new Swiper(".likedProducts", {
+     slidesPerView: 4,
+     spaceBetween: 30,
+     pagination: {       
+       clickable: true,
+     },
+   });
+
+   
+
+ </script>

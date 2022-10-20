@@ -1,0 +1,61 @@
+{{  "style.banner-card.css" | asset_url | stylesheet_tag }}
+<div class="banner-card">
+    <div class="container">
+        <div class="banner-card__grid">
+            {% for item in section.blocks %}
+            {% render "banner-card-item",
+                img:item.settings.banner_card_img, 
+                title: item.settings.banner_card_title,
+                card_cta: item.settings.banner_card_action,
+                card_url: item.settings.banner_card_action_url
+            %}
+            {% endfor %}
+            
+        </div>
+       
+
+    </div>     
+</div>
+
+{% schema %}
+{
+   "name": "banner card",
+   "max_blocks": 4,
+   "blocks":[
+      {
+        "name": "Banner card Item",
+       "type": "text",
+       "settings": [
+       {
+          "type": "image_picker",
+          "id":"banner_card_img",
+          "label": "Banner Card Image"
+       },
+       {
+          "type": "text",
+          "id":"banner_card_title",
+          "label": "Banner Card Title"
+       },
+       {
+          "type": "text",
+          "id":"banner_card_action",
+          "label": "Banner Card Action"
+       },
+       {
+          "type": "url",
+          "id":"banner_card_action_url",
+          "label": "Banner Card Action Url"
+       }
+     ]
+      }
+
+   ],
+  
+  "presets": [
+    {
+      "category": "banner",
+        "name": "Card Banner"
+    }
+  ]
+}
+{% endschema %}

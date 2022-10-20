@@ -1,0 +1,40 @@
+.banner-full {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 203px 40px;
+  color: var(--color-white);
+}
+.banner-full__content {
+  width: 36%;
+}
+.full-banner__title {
+  margin-bottom: 24px;
+}
+
+.full-banner__cta {
+  margin-top: 40px;
+  width: 236px;
+  height: 58px;
+  border: 1px solid #ffffff;
+  background-color: transparent;
+  padding: 21px 24px;
+
+  letter-spacing: 0.175em;
+  text-transform: uppercase;
+  color: var(--color-white);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.full-banner__cta:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  transition: 300ms;
+}
+.full-banner__cta:hover .hover-arrow path{
+  fill: black;
+  transition: 300ms;
+
+}

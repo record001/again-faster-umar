@@ -1,0 +1,88 @@
+<!-- /templates/customers/register.liquid -->
+<style>
+  .register {
+    width: 442px;
+    padding: 80px 0 120px;
+    margin: 0 auto;
+  }
+  .register h3 {
+    margin-bottom: 63px;
+    text-align: center;
+  }
+  .register p {
+    text-align: center;
+    color: #000000;
+    padding: 24px 0 40px;
+  }
+  .fullname-wrp {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 16px;
+  }
+  .register label {
+     font-family: var(--primary-font-family);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 167.5%;
+    color: #000000;
+  }
+  .register input {
+    width: 100%;
+    border: none;
+    padding:8px 0 12px;
+    border-bottom: 1px solid #C4C4C4;
+  }
+  .register .email-wrp, .password-wrp {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+  .register .confirm {
+    margin-bottom: 40px;
+  }
+</style>
+<div class="register">
+
+
+  <h3>Create an Account</h3>
+{% form 'create_customer' %}
+
+  {{ form.errors | default_errors }}
+  <div class="fullname-wrp">
+    <div class="first_name-wrp">
+      <label for="first_name">First Name</label>
+      <input type="text" name="customer[first_name]" placeholder="Andy"/>
+    </div>
+    
+    <div class="last_name-wrp">
+      <label for="last_name">Last Name</label>
+      <input type="text"  name="customer[last_name]" placeholder="Smith" />
+    </div>
+  </div>
+  
+  <div class="email-wrp">
+    <label for="email">Email Address</label>
+    <input type="email"  name="customer[email]" size="30" placeholder="andy@avexdesigns.com"/>
+
+  </div>
+
+  <div class="password-wrp">
+    <label for="password">Password</label>
+    <input type="password"  name="customer[password]" size="30" />
+
+  </div>
+  <div class="password-wrp confirm">
+    <label for="password_confirmation">Confirm Password</label>
+    <input type="password"   name="customer[password_confirmation]" size="30" />
+
+  </div>
+
+  {% render "submit-btn", text: "Create an Account" %}
+
+  <p>Already have an account?</p>
+
+  {% render "redirect-btn", text: "log in", link: routes.account_login_url %}
+
+{% endform %}
+
+</div>

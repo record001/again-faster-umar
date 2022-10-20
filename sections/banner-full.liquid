@@ -1,0 +1,76 @@
+{{ "style.banner-full.css" | asset_url | stylesheet_tag }}
+<style>
+    .{{section.id}}.banner-full {
+        background-image: url({{ section.settings.full_banner_bg | image_url }});
+    }
+</style>
+
+<div class="{{section.id}} banner-full">
+    <div class="container">
+        <div class="banner-full__content">
+            {% if section.settings.full_banner_title !=blank %}
+            <h2 class="full-banner__title">{{ section.settings.full_banner_title }}</h2> 
+            {% endif %}
+              
+            {% if section.settings.full_banner_desc !=blank %}
+               
+            <p > {{ section.settings.full_banner_desc }}   </p>
+            {% endif %}
+
+            {% if section.settings.full_banner_cta !=blank %}
+            <a class="p2 full-banner__cta" href="{{ section.settings.full_banner_cta_url }}">{{ section.settings.full_banner_cta }}
+               {% render "icon-right-arrow" class: "hover-arrow" %}
+            </a>
+            {% endif %}
+
+             
+                
+         
+            
+
+        </div>
+
+    </div>   
+</div>
+
+{% schema %}
+{
+   "name": "Full banner",
+  "settings": [
+    {
+       "type": "image_picker",
+       "id": "full_banner_bg",
+       "label": "Banner Backround Image"
+    },
+    {
+       "type": "text",
+       "id": "full_banner_title",
+       "label": "Banner Title",
+       "default": "Training in comfort"
+    },
+    {
+       "type": "text",
+       "id": "full_banner_desc",
+       "label": "Banner Description",
+       "default": "Incredibly soft Airlume combed and ringspun cotton + poly fabric provides excellent stretch and recovery during even the most intense workouts."
+    },
+    {
+       "type": "text",
+       "id": "full_banner_cta",
+       "label": "Banner Action",
+       "default": "shop now"
+    },
+    {
+       "type": "url",
+       "id": "full_banner_cta_url",
+       "label": "Banner Action Url"
+    }
+  ],
+  "presets": [
+    {
+      "category": "banner",
+     "name": "Full Banner"
+    }
+  ]
+}
+{% endschema %}

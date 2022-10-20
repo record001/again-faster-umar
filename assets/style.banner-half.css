@@ -1,0 +1,37 @@
+.half-banner {
+  padding-bottom: 120px;
+  display: grid;
+  grid-template-columns: 57.43% 33%;
+  gap: 0 4.5%;
+  width: 100%;
+  color: var(--color-black);
+}
+.half-banner__img img {
+    width: 100%;
+}
+.half-banner__card {
+  padding-top: 80px;
+}
+.half-banner__card img{
+    width: 100%;
+}
+.half-banner__card h5 {
+  margin-top: 40px;
+}
+
+.half-banner__card h3 {
+  margin: 8px 0 16px;
+}
+
+.half-banner__card p {
+   color: #8f8f8f;
+  margin-bottom: 40px;
+}
+.half-banner__card a {
+  
+  letter-spacing: 0.175em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  padding-bottom: 8px;
+  border-bottom: 1px solid #000;
+}

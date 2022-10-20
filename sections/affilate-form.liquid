@@ -1,0 +1,55 @@
+{{ "style.affilate-form.css" | asset_url | stylesheet_tag }} 
+<div class="affilate-form">
+    <div class="affilate-form__left">
+        <div class="affilate-form__left-in">
+            <h3 class="h3 affilate-form__title">consultation</h3>
+            <p class="p">
+                Looking to customize a package or build your own? 
+                Our team is here to help build your dream gym.
+            </p>
+        </div>
+    </div>
+    <div class="affilate-form__right">
+        <p class="p">
+            Complete the information below and a member of our 
+            team will reach out to you.
+        </p>
+        <form class="form">
+            <div class="form__name">
+                <div class="form__firstname">
+                    <p class='p2'>First Name</p>
+                    <input type="text" id="fname" name="firstname" placeholder="Andy">
+                </div>
+                <div class="form__lastname">
+                    <p class='p2'>Last Name</p>
+                    <input type="text" id="lname" name="lastname" placeholder="Smiths">
+                </div>
+            </div>
+            <div class="form__email">
+                <p class="p2">Email</p>
+                <input type="email" id="email" name="email" placeholder="andy@avexdesigns.com">
+            </div>
+            <div class="interested-in">
+                <p class="p2">I'm interested in</p>
+                <label class="container">
+                    <input type="radio" checked="checked" name="interested-in__radio">
+                    <span class="checkmark"></span>
+                    <p class="p2">Outfitting a new gym</p>
+                </label>
+                <label class="container">
+                    <input type="radio" checked="checked" name="interested-in__radio">
+                    <span class="checkmark"></span>
+                    <p class="p2">Updating an existing gym</p>
+                </label>
+            </div>
+            <div class="form__gym-name">
+                <p class="p2">Gym Name</p>
+                <input type="text" id="gym-name" name="gym-name" placeholder="Again Faster">
+            </div>
+            <div class="form__notes">
+                <p class="p2">Additional Details</p>
+                <textarea id="additional-notes" name="additional-notes"></textarea>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+{{ "style.affilate-big-banner.css" | asset_url | stylesheet_tag }} 
+
+<div class="affilate-big-banner">
+    <div class="container">
+       <div class="affilate-big-banner__grid">
+        <div class="grid__content">
+          <h4>{{ section.settings.affilate_big_banner_title }}</h4>
+          <p>{{ section.settings.affilate_big_banner_desc }}</p>
+        </div>
+        <div class="grid__img">
+          <img src="{{section.settings.affilate_big_banner_img | img_url: 'master'}}" alt="img">
+        </div>
+       </div>   
+    </div>     
+</div>
+{% schema %}
+{
+    "name": "affilate-big-banner",
+   "settings": [
+    {
+     "type": "image_picker",
+     "id":"affilate_big_banner_img",
+     "label": "Banner Image"
+    },
+    {
+     "type": "text",
+     "id":"affilate_big_banner_title",
+     "label": "Banner Title"
+    },
+    {
+     "type": "text",
+     "id":"affilate_big_banner_desc",
+     "label": "Banner Description"
+    }
+   ]
+
+}
+{% endschema %}

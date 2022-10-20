@@ -1,0 +1,65 @@
+{{ "style.list-collection-hero.css" | asset_url | stylesheet_tag }}
+
+<div class="list-collection-hero">
+    <div class="container" >
+            <div class="list-collection-hero__grid">
+                <div class="list-collection-hero__content">
+                    <h5>{{ section.settings.collection_hero_subtitle }}</h4>
+                    <h2>{{ section.settings.collection_hero_title }}</h1>
+                    <a href="{{ section.settings.collection_hero_link }}" class="p2">{{ section.settings.collection_hero_cta }}
+                        {% render "icon-right-arrow", class: "black" %}
+                    </a>
+                </div>
+                <div class="list-collection-hero__img">
+                    <div class="img__big-wrp">
+                        <img class="img__big" src="{{ section.settings.img_big | img_url: '570x' }}" alt="{{ section.settings.img_big.alt }}">
+                    </div>
+
+                    <div class="img__small-wpr">                        
+                        <img class="img__small" src="{{ section.settings.img_small | img_url: '304x' }}" alt="{{ section.settings.img_small.alt }}">
+                    </div>
+              
+                </div>
+            </div>
+    </div>     
+</div>
+
+
+{% schema %}
+{
+   "name": "List Collections",
+  "settings": [
+    {
+       "type": "image_picker",
+       "id": "img_big",
+       "label": "Big Image"
+    },
+    {
+       "type": "image_picker",
+       "id": "img_small",
+       "label": "Small Image"
+    },
+    {
+       "type": "text",
+       "id": "collection_hero_subtitle",
+       "label": "Subtitle"
+    },
+    {
+       "type": "text",
+       "id": "collection_hero_title",
+       "label": "Title"
+    },
+    {
+       "type": "text",
+       "id": "collection_hero_cta",
+       "label": "Collection Hero Action"
+    },
+    {
+       "type": "url",
+       "id": "collection_hero_link",
+       "label": "Collection Hero Action Link"
+    }
+
+  ]
+}
+{% endschema %}

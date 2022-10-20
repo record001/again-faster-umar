@@ -1,0 +1,26 @@
+{{ "style.announcement.css" | asset_url | stylesheet_tag }}
+<div class="announcement">
+     <a href="#!" class="h5 announcement__text">{{ section.settings.Title }}</a>
+   
+       
+</div>
+
+{% schema %}
+{
+    "name" : "Announcement Bar",
+    "settings": [
+        {
+            "id": "Title",
+            "type": "text",
+            "label": "Announcement title",
+            "default" : "20% OFF Sitewide until 9/12"
+        }
+        
+        
+    ]
+}
+{% endschema %}
+
+     
+
+  

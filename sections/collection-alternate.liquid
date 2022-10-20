@@ -1,0 +1,58 @@
+{{ "style.list-collection-hero.css" | asset_url | stylesheet_tag }}
+{{ "style.list-collection.css" | asset_url | stylesheet_tag }}
+
+
+<div class="list-collection-hero">
+    <div class="container" >
+            <div class="list-collection-hero__grid">
+                <div class="list-collection-hero__content">
+
+                    <h5><span>/</span>{{ collection.metafields.accentuate.eyebrow }}</h5>
+                    <h2>{{ collection.metafields.accentuate.title}}</h2>
+                    <a href="{{ collection.metafields.accentuate.cta_url }}" class="p2">{{collection.metafields.accentuate.cta_label }}
+                        {% render "icon-right-arrow", class: "black" %}
+                    </a>
+                </div>
+                <div class="list-collection-hero__img">
+                    <div class="img__big-wrp">
+                       
+                        {% for item in  collection.metafields.accentuate.alternate_collection_image %}
+                         <img class="img__big" src="{{ item.src}}" alt="img">  
+                        {% endfor %}
+                    </div>
+
+                    <div class="img__small-wpr">                        
+                        
+
+                        {% for item in collection.metafields.accentuate.alternate_collection_image2 %}
+                        <img class="img__small" src="{{ item.src }}" alt="img">
+                        {% endfor %}
+                    </div>
+              
+                </div>
+            </div>
+    </div>     
+</div>
+
+<div class="list-collection">
+<!-- {{ collection.metafields.accentuate.collections_for_alter | split: '|' }} -->
+<script>
+    console.log({{ collection.metafields.accentuate.collections_for_alter | split: '|' }})
+</script>
+
+    <div class="container">
+        <div class="list-collection__grid">
+            {% assign selected_handles =  collection.metafields.accentuate.collections_for_alter | split: '|'  %}
+            {% for collection in selected_handles %}    
+                    <div class="grid__item">
+                        <a href="{{collections[collection].url}}"><img src="{{ collections[collection].image | img_url: 'medium' }}" alt=""></a>
+                        
+                        <h4>{{ collections[collection].title | link_to: collections[collection].url}}
+                            {% render "icon-right-arrow", class: "hover-arrow" %}
+                        </h4>
+                     </div>    
+            {% endfor %}
+           
+         </div>     
+</div>
+

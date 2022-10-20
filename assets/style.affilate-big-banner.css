@@ -1,0 +1,20 @@
+.affilate-big-banner {
+    margin: 80px 0 120px;
+}
+.affilate-big-banner__grid {
+    display: grid;
+    grid-template-columns: 50% 45%;
+    gap: 0 5%;
+}
+.affilate-big-banner__grid .grid__content h4{
+    margin-bottom: 24px;
+}
+.affilate-big-banner__grid .grid__content p{
+   color: #767676;
+}
+.affilate-big-banner__grid .grid__img {
+    height: 870px;
+}
+.affilate-big-banner__grid .grid__img img {
+    width: 100%;
+}

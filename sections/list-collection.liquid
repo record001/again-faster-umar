@@ -1,0 +1,35 @@
+{{ "style.list-collection.css" | asset_url | stylesheet_tag }}
+
+<div class="list-collection">
+    <div class="container">
+           <div class="list-collection__grid">
+                {% for collection in section.settings.collection_list %}
+                
+                 
+                    <div class="grid__item">
+                        <a href="{{collection.url}}"><img src="{{ collection.image | img_url: 'medium' }}" alt=""></a>
+                        
+                        <h4>{{ collection.title | link_to: collection.url}}
+                            {% render "icon-right-arrow", class: "hover-arrow" %}
+                        </h4>
+                       
+                    </div>
+                 
+              
+                {% endfor %}
+           </div> 
+    </div>     
+</div>
+
+{% schema %}
+{
+   "name": "List Of Collections",
+  "settings": [
+    {
+        "type": "collection_list",
+        "id": "collection_list",
+        "label": "Collections"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,248 @@
+{{ "style.product-hero.css" | asset_url | stylesheet_tag }}
+<!-- YOTPO CDN -->
+<script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/XUDrDbLaPGxUHd5tDOsMrE1yY8UD951OhuSbkq3s" async></script>
+ <!-- Link Swiper's CSS -->
+ <link
+ rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+<div class="product-hero ">
+    <div class="product-hero__grid product">
+            
+        <div class="product__gallary">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                {% for item in product.images %}
+                    <div class="swiper-slide">
+                        <img src="{{item | img_url: "master" }}" alt="{{ item.alt | escape}}">
+                    </div>   
+                {% endfor %}             
+                                   
+             
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+              
+        <div class="product__datails">
+          <h3 >{{ product.title }}</h3>        
+            <p class="product__price">{{ product.price | money }}</p>        
+         
+          <div class="review">
+            <!-- {% render "icon-star" %}   <p>18 reviews</p> -->
+            <div class="yotpo-widget-instance" data-yotpo-instance-id="250054" data-yotpo-product-id="{{product.id}}"></div>
+          </div>
+          <div class="review">
+           <img src="https://cdn.shopify.com/s/files/1/0625/1184/1457/files/affirm.svg?v=1666009227" alt="affirm">
+              <p>pay as low as 56/mo Learn More</p>
+          </div>
+
+          <p>
+             {{ product.description }}
+          </p>
+
+          <form  class="product-form" id="form" data-selling_plan_id="{{ product.selling_plan_groups.size }}" data-id="{{product.has_only_default_variant}}" >         
+            
+          {% if product.has_only_default_variant %}
+            <span id="{{ product.selected_or_first_available_variant.id }}"
+             class="no-variant"  > </span>
+          {% else %} 
+            <div class="product-options">                                          
+              
+              {% for variant in product.variants %}  
+              
+                  <label class="option-wrp" >
+                    <input type="radio" id="{{ variant.id }}" 
+                    name="select_one" class="option"                                          
+                    value="{{ variant.id }}"  
+                                      
+                    {% if variant == product.selected_or_first_available_variant %} checked {% endif %}  
+                    {% if variant.inventory_quantity == 0 %} disabled {% endif %}   >
+
+                    <span class="p option__text">{{ variant.title }}</span>
+                  </label>                          
+                                      
+              {% endfor %}  
+            </div>
+          {% endif %}
+            
+                <!-- <div class="rc-widget-injection-parent"></div> -->
+              {% if product.selling_plan_groups.size >=1 %}
+                  
+                  <div class="recharge-wrp">                    
+                    <label class="recharge-label">
+                      <input id="one-time-purchase" class="recharge-option" type="radio" name="one" 
+                      checked>
+                      <span class="recharge-text">One-Time Purchase</span>
+                    </label>  
+                                      
+                    <label class="recharge-label">
+                    
+                      <input id="subscribe" class="recharge-option" type="radio" name="one" value="subscribe"> 
+                      <span class="recharge-text">Subscribe & Save 
+                        <span class="subscribe-price" id="{{product.selling_plan_groups[0].selling_plans[0].price_adjustments[0].value}}">sa</span>   
+                      </span>
+                    </label>
+                  </div>
+                  
+                  <div class="recharge-frequency">
+                    {% for item in product.selling_plan_groups[0].selling_plans  %}
+                 
+                      <label class="recharge-frequency-label">
+                        <input class="recharge-frequency-option"
+                        {% if forloop.index == 1 %}   checked  {% endif %}
+                        type="radio" name="freq" id="" value="{{item.id}}">
+                        <span class="recharge-text">{{item.name | remove: 'Delivery every'}}
+                         
+                        </span>
+                      </label>
+                    {% endfor %}
+                    
+                  </div>
+             
+                  
+              {% endif %} 
+
+              <p class="free-shipping">Available for Free shipping!</p>
+              <button id="add_card_btn" type="submit" class="p2 add-card-btn" >Add to cart</button>
+        
+          </form>
+
+          {% assign frequent_product = product.metafields.accentuate.frequent_product | split: "|"%}
+          {% if frequent_product.size >0 %}
+            
+          
+          <h4>Frequently bought with</h4>
+          <div class="frequently-bought-with">
+            {% for product in frequent_product %}          
+            
+            <div class="card-wrp" >
+              <div class="img-wpr">
+                <img src="{{ all_products[product].featured_image | img_url:"medium" }}" alt="">
+              </div>
+              <div class="card-context">
+                <p> {{ all_products[product].title }}</p>
+                <button  class="fbw_add_to_cart"
+                 value="{{ all_products[product].selected_or_first_available_variant.id }}" >Add to Cart</button>
+              </div>
+            </div>
+                       
+            {% endfor %}
+
+            
+          </div>
+          {% endif %}
+        
+    
+        </div>
+        
+
+    </div>
+</div>
+
+{% schema %}
+{
+ "name": "for apps",
+ "blocks":[
+ {"type": "@app"}
+ ]
+}
+{% endschema %}
+
+
+ <!-- Swiper JS -->
+ <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+ <!-- Initialize Swiper -->
+ <script>
+   var swiper = new Swiper(".mySwiper", {
+     direction: "vertical",
+     loop: true,
+     pagination: {
+       el: ".swiper-pagination",
+       clickable: true,
+     },
+   });
+ </script>
+
+ <script>
+  let variant = {{ product.variants | json }}
+  let product_obj = {{product | json}}
+  let option_arr = document.querySelectorAll(".option")
+ console.log("pro_obj", product_obj.variants[0]);
+
+// subscribe + changing price
+let subscribe_price = document.querySelector(".subscribe-price")
+  let mapped_opt = variant.map(item => {
+    return( item.price- (item.price*subscribe_price?.id)/100)/100 
+  })
+  
+  let recharge_frequency_option = document.querySelectorAll(".recharge-frequency-option")
+  // for one-time purchase changing price
+  if (product_obj.selling_plan_groups.length >=1) {
+    let one_time_purchase = document?.querySelector ("#one-time-purchase")
+    if (product_obj.variants.length == 1) {
+      // it has no variants
+      one_time_purchase.value  = product_obj.variants[0].id
+      recharge_frequency_option[0].id = product_obj.variants[0].id
+      recharge_frequency_option[1].id = product_obj.variants[0].id
+
+      subscribe_price.innerHTML =(product_obj.variants[0].price -(product_obj.variants[0].price * subscribe_price.id)/100)/100
+
+    }else {
+      // it has variants
+      for (let i = 0; i < variant.length; i++) {
+        one_time_purchase.value = document.querySelector(".option:checked").value
+        
+        recharge_frequency_option[0].id = document.querySelector(".option:checked").value
+        
+        recharge_frequency_option[1].id = document.querySelector(".option:checked").value
+        subscribe_price.innerHTML ="$"+ mapped_opt[i]
+
+        option_arr[i].addEventListener("click", e => {
+        if(e.target.id == variant[i].id) {
+          one_time_purchase.value = e.target.id
+          recharge_frequency_option[0].id =e.target.id
+          recharge_frequency_option[1].id =e.target.id
+
+         subscribe_price.innerHTML ="$"+ mapped_opt[i]
+
+        }
+
+      })
+      }
+    }
+  }
+  // change prices depending on the variant
+  let variant_price = document.querySelector(".product__price")
+ 
+   for (let i = 0; i < option_arr.length; i++) {  
+   
+     if(option_arr[i].checked) {
+      variant_price.innerHTML = `$${variant[i].price/100}.00`
+
+     }
+     option_arr[i].addEventListener("click", e => {
+        if(e.target.id == variant[i].id) {
+          variant_price.innerHTML = `$${variant[i].price/100}.00`
+
+        }
+
+      })
+    
+   }
+
+ let recharge_label = document.querySelectorAll(".recharge-label")
+ recharge_label.forEach(item => {
+  item.addEventListener("click", (e)=> {
+    if (e.target.id == "subscribe") {
+      document.querySelector(".recharge-frequency").style.display = "flex"
+      
+    }else {
+      document.querySelector(".recharge-frequency").style.display = "none"
+
+    }
+  })
+ })
+
+ </script>

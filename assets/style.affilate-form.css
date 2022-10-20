@@ -1,0 +1,19 @@
+.affilate-form{
+    padding: 120px 0;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.affilate-form__title{
+    margin-bottom: 24px;
+}
+.affilate-form__left{
+    grid-column: 1/2;
+    display: flex;
+    justify-content: center;
+}
+.affilate-form__left-in{
+    width: 450px;
+}
+.affilate-form__right{
+    grid-column: 2/3;
+}

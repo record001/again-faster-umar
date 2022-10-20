@@ -1,0 +1,121 @@
+{{ "style.collection.css" | asset_url | stylesheet_tag }}
+
+<style>
+  .collection__grid {
+        grid-template-columns: repeat({{ section.settings.product_column }}, 1fr);
+  }
+  .collection__grid__item .img-wrp {
+    height: {{ section.settings.card_height }};
+  }
+</style>
+
+<div class="collection">
+    <div class="container">
+       <h3 class="collection__title"> {{ collection.title }} </h3>
+       
+
+        <ul class="collection__nav">
+            {% for col in section.settings.collection_list %}
+            
+              <li class="nav__item">
+                 <a href="{{col.url}}" 
+                   id="{% if collection.title == col.title -%}active{%- endif %}">
+                  {{col.title}}                   
+                </a>  
+                <span class="slash">/</span>
+              </li>      
+                  
+             {% endfor %}
+        </ul>    
+
+        <div class="collection__grid">
+                 
+          {% for item in collection.products %}
+          <div class="collection__grid__item">
+            <a href="{{ item.url }}">
+            <div class="img-wrp">
+
+              <div class="badge-wrp">
+                {% for tag in item.tags %}
+                    {% if tag == 'Best Seller'%}
+                    <span class="p2 badge best-seller">Best Seller</span>
+                    {% endif %}
+                    {% if tag == 'Free Shipping'%}
+                    <span class="p2 badge free-shipping">Free Shipping</span>
+                    {% endif %}
+                    {% if tag == 'Sale'%}
+                    <span class="p2 badge sale">Sale</span>
+                    {% endif %}
+                  
+                  {% endfor %} 
+              </div>                
+
+              <img src="{{ item.images[0] | img_url: 'master'}}" alt="">
+            </div>
+           
+            <h5 class="item__title"> {{ item.title | link_to: item.url }}</h5>
+            {% render "icon-star"%}
+            
+            <h5 class="price">{{ item.price | money }}</h5>
+          </a>
+          </div> 
+         
+          {% endfor %}
+
+          
+        </div>
+    </div>     
+</div>
+
+{% schema %}
+{
+    "name": "Product Column",
+   "settings": [
+      {
+        "type": "range",
+        "min": 2,
+        "max": 6,
+        "step": 1,
+        "id": "product_column",
+        "label": "Number of Column",
+        "default" : 3
+      },
+      {
+        "type": "select",
+        "id": "card_height",
+        "label": "Card Height",
+        "options": [
+          {
+            "value": "550px",
+            "label": "550px"
+          },
+          {
+            "value": "450px",
+            "label": "450px"
+          },
+          {
+            "value": "400px",
+            "label": "400px"
+          },
+          {
+            "value": "350px",
+            "label": "350px"
+          },
+          {
+            "value": "300px",
+            "label": "300px"
+          }
+        ],
+        "default": "550px"
+      },
+      
+      {
+        "type": "collection_list",
+        "id": "collection_list",
+        "label": "Collections"
+        
+      }
+      
+   ]
+}
+{% endschema %}

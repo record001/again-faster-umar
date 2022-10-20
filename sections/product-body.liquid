@@ -1,0 +1,31 @@
+{{ "style.product-body.css" | asset_url | stylesheet_tag }}
+
+{% assign banner_text = product.metafields.accentuate.banner_text  %}
+{% assign banner_images = product.metafields.accentuate.banner_image %}
+
+{% if banner_text %}
+
+
+<div class="product-body banner">
+  <span class="line"></span>
+  <span class="line"></span>
+  <span class="line"></span>
+  {% for item in (1..banner_text.size)  %}
+    <div class="banner__grid">
+        <div class="banner__content">
+            {% if banner_text[forloop.index0] != blank %}
+                {{ banner_text[forloop.index0] }}
+            {% endif %}                                     
+											
+        </div>
+        <div class="banner__image">
+            {% if banner_images[forloop.index0] != blank %}
+               <img src="{{ banner_images[forloop.index0][0].src }}" alt="img">              
+            {% endif %}
+        </div>
+    </div>
+  {% endfor %}
+</div>
+
+
+{% endif %}

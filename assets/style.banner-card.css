@@ -1,0 +1,27 @@
+.banner-card {
+  padding: 120px 0;
+  color: var(--color-black);
+}
+.banner-card__grid {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 45.6% 45.6%;
+  gap: 0 4%;
+}
+
+.banner-card__item img {
+  width: 100%;
+}
+.banner-card__item h3 {  
+  margin: 24px 0;
+}
+.banner-card__item a {
+    display: inline-block;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #000;
+  
+  letter-spacing: 0.175em;
+  text-transform: uppercase;
+  color: var(--color-black);
+
+}

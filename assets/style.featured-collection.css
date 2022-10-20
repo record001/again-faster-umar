@@ -1,0 +1,29 @@
+.featured-collection {
+    padding: 97px 0 120px;
+}
+.featured-collection__title {    
+    text-align: center;
+       color: var(--color-black);
+    margin-top: 8px;
+    
+}
+.hover-arrow {
+    margin-left: 9px;
+}
+.featured-collection__title:hover .hover-arrow path{
+    fill: black;
+}
+
+.featured-collection .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.featured-collection .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+

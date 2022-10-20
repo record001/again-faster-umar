@@ -1,0 +1,61 @@
+{{ "style.banner-half.css" | asset_url | stylesheet_tag}}
+
+<div class="half-banner">
+    <div class="half-banner__img">
+        <img src="{{ section.settings.half_banner_img | img_url: "827x" }}" 
+        alt="{{ section.settings.half_banner_img.alt | escape}}"
+        loading ="lazy"
+        >
+    </div>
+
+    <div class="half-banner__card">
+        <img src="{{ section.settings.half_banner_card_img | img_url: "462x" }}" alt="img">
+        <h5>{{ section.settings.half_banner_card_subtitle }}</h5>
+        <h3>{{ section.settings.half_banner_card_title }}</h3>
+        <p>{{ section.settings.half_banner_card_desc }}</p>
+        <a href="#!" class="p2">{{ section.settings.half_banner_card_cta }}</a>
+    </div>
+</div>
+
+{% schema %}
+{
+   "name": "Half Banner",
+  "settings": [
+    {
+       "type": "image_picker",
+       "id":"half_banner_img",
+       "label": "Banner Image"
+    },
+    {
+       "type": "image_picker",
+       "id":"half_banner_card_img",
+       "label": "Banner Card Image"
+    },
+    {
+       "type": "text",
+       "id":"half_banner_card_subtitle",
+       "label": "Banner Card Subtitle",
+        "default": "Best seller"
+    },
+    {
+       "type": "text",
+       "id":"half_banner_card_title",
+       "label": "Banner Card Title",
+       "default": "TRULY, AN ALL IN ONE BARBELL"
+    },
+    {
+       "type": "text",
+       "id":"half_banner_card_desc",
+       "label": "Banner Card Description",
+       "default": "Design that matches the performance and quality of other elite level competition bars"
+    },
+    {
+       "type": "text",
+       "id":"half_banner_card_cta",
+       "label": "Banner Card Action",
+       "default": "Shop weights"
+    }
+  ]
+}
+{% endschema %}
+
