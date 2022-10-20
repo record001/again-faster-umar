@@ -17,3 +17,7 @@
 .affilate-form__right{
     grid-column: 2/3;
 }
+
+.form__name{
+    display: flex;
+}
