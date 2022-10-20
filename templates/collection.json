@@ -4,7 +4,7 @@
       "type": "collection",
       "settings": {
         "product_column": 4,
-        "card_height": 450,
+        "card_height": "450px",
         "collection_list": [
           "affiliate-outfitting",
           "barbells",
