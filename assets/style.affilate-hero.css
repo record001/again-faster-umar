@@ -1,0 +1,41 @@
+.affilate-hero {
+    height: calc(100vh - 92px);
+    margin-top: 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    position: relative;
+}
+.affilate-hero h5{
+    margin-bottom: 20px;
+}
+.affilate-hero .down_arrow{
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    cursor: pointer;
+}
+.affilate-hero__list-wrp {
+    width: 100%;
+    height: 60px;
+    background-color: #F1F1F1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.affilate-hero__list {
+    width: 50%;
+ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.affilate-hero__list a {
+    color: var(--color-black);
+}

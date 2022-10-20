@@ -1,0 +1,36 @@
+.affilate-packages {
+    margin-bottom: 120px;
+}
+.affilate-packages__title {
+    text-align: center;
+}
+.affilate-packages__desc {
+    text-align: center;
+    margin: 24px 0 41px;
+}
+.affilate-packages__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 1px;
+}
+.affilate-packages__grid .grid__item {
+    background-color: #F1F1F1;
+    padding: 80px 90px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.affilate-packages__grid .grid__item h2 {
+    margin-bottom: 15px;
+}
+.affilate-packages__grid .grid__item .item__package {
+    margin: 40px 0;
+
+}
+.affilate-packages__grid .grid__item .item__package li {
+    margin-bottom: 15px;
+}
+.affilate-packages__grid .grid__item .item__package li a {
+    color: #767676;
+}
