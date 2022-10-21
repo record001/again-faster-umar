@@ -16,8 +16,88 @@
 }
 .affilate-form__right{
     grid-column: 2/3;
+    width: 450px;
 }
-
+.affilate-form__right > p{
+    margin-bottom: 24px;
+}
+.form{
+    width: 100%;
+}
+.form input{
+    border: none;
+    padding: 8px 0;
+    border-bottom: 1px solid #C4C4C4;
+    width: 100%;
+    font-family: 'Avenir Next', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 168%;
+}
+.form input:focus{
+    outline: none;
+}
+.form > div:not(:last-child){
+    margin-bottom: 24px;
+}
 .form__name{
     display: flex;
+}
+.form__name > div{
+    width: 50%;
+}
+.form__name > div:not(:last-child){
+    margin-right: 10px;
+}
+
+.interested-in__title{
+    margin-bottom: 8px;
+}
+.intereseted-in__container{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-bottom: 8px;
+}
+.intereseted-in__container > input{
+    display: none;
+}
+.intereseted-in__container input:checked ~ .intereseted-in__checkmark::after{
+    background-color: #000000;
+}
+.intereseted-in__checkmark{
+    height: 24px;
+    width: 24px;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+}
+.intereseted-in__checkmark::after{
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.form__notes > p{
+    margin-bottom: 8px;
+}
+.form__notes textarea{
+    width: 100%;
+    height: 120px;
+    padding: 5px 10px;
+    border: 1px solid #C4C4C4;
+    font-family: 'Avenir Next', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 168%;
+}
+.form__notes textarea:focus{
+    outline: none;
 }

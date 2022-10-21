@@ -115,6 +115,9 @@ p,
   border: 1px solid black;
   transition: 300ms;
 }
+.submit_btn:active{
+  transform: scale(0.9);
+}
 
 .redirect-btn {
   width: 100%;
