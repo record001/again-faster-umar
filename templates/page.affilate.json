@@ -20,11 +20,60 @@
         "type": "affilate-packages",
         "settings": {
         }
+
+      },
+      "affilate-banner": {
+        "type": "affilate-banner",
+        "blocks": {
+          "c1cc71bd-f429-4ab9-beee-0d37a0b6ed06": {
+            "type": "banner",
+            "settings": {
+              "title": "Pullup rings",
+              "text": "As the centerpiece of your gym, the Again Faster Competition Series lineup is sure to live up to its name. Featuring heavy-duty 11-gauge 3in x 3in uprights, this line has been designed in conjunction with top strength and conditioning athletes in mind.",
+              "image": "shopify:\/\/shop_images\/banner_img.jpg"
+            }
+          },
+          "815905b8-5b74-474a-a834-ee515abd2dbb": {
+            "type": "banner",
+            "settings": {
+              "title": "Bumper plates",
+              "text": "Our Crumb Rubber Bumper Plates have supplied thousands of gyms across the country with an affordable, yet durable bumper plate. For gyms looking for kilogram weightlifting plates, we also have a Pro Competition Series of bumpers.",
+              "image": "shopify:\/\/shop_images\/banner_img2.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "c1cc71bd-f429-4ab9-beee-0d37a0b6ed06",
+          "815905b8-5b74-474a-a834-ee515abd2dbb"
+        ],
+        "settings": {
+          "heading_small": "Your section's small heading",
+          "heading_big": "Again Faster stands behind our products. Our barbells and rigs are guaranteed for life, and all products carry a strong warranty."
+        }
+      },
+      "affilate-cta": {
+        "type": "affilate-cta",
+        "settings": {
+          "cta_title": "CTA Title",
+          "cta_text": "Lorem ipsum dolor amet",
+          "cta_url": "",
+          "arrow_image": "shopify:\/\/shop_images\/black-arrow.png"
+        }
+      },
+      "affilate-form": {
+        "type": "affilate-form",
+        "settings": {
+        }
+
       }
     },
     "order": [
       "affilate-hero",
       "affilate-big-banner",
-      "affilate-packages"
+      "affilate-packages",
+      "affilate-banner",
+      "affilate-cta",
+      "affilate-form"
+
     ]
   }
