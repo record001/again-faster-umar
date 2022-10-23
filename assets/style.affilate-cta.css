@@ -1,0 +1,24 @@
+.cta__container{
+    padding: 120px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FBFBFB;
+    color: #000000;
+}
+.cta__title{
+    margin-bottom: 24px;
+}
+.cta__text{
+    margin-bottom: 40px;
+}
+.cta__btn{
+    width: 236px;
+}
+.cta__btn img{
+    width: 16px;
+}
+.cta__a-tag{
+    justify-content: space-between;
+    padding: 0 24px;
+}

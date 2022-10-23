@@ -1,0 +1,40 @@
+{{ 'style.affilate-cta.css' | asset_url | stylesheet_tag }}
+<div class="cta__container">
+    <h3 class="heading--tertiary cta__title">{{ section.settings.cta_title }}</h3>
+    <p class="p--primary cta__text">{{ section.settings.cta_text }}</p>
+    <div class="cta__btn">
+        <a href="{{ section.settings.cta_url }}" class="redirect-btn cta__a-tag">
+            Learn more
+            <img src="{{section.settings.arrow_image | image_url }}">
+        </a>
+    </div>
+</div>
+{% schema %}
+    {
+        "name":"Page CTA",
+        "settings": [
+            {
+                "type":"text",
+                "id":"cta_title",
+                "default":"CTA Title",
+                "label":"Page CTA Title"
+            },
+            {
+                "type":"text",
+                "id":"cta_text",
+                "default":"Lorem ipsum dolor amet",
+                "label":"Page CTA Text"
+            },
+            {
+                "type":"url",
+                "id":"cta_url",
+                "label":"Page CTA url"
+            },
+            {
+                "type": "image_picker",
+                "id": "arrow_image",
+                "label": "upload arrow image"
+            }
+        ]
+    }
+{% endschema %}

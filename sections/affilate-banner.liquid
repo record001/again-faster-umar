@@ -1,0 +1,68 @@
+{{ "style.affilate-banner.css" | asset_url | stylesheet_tag }} 
+
+<div class="banner__group">
+    <h4 class="banner__group-heading--small h3">Why again faster?</h4>
+    <h2 class="banner__group-heading--big">
+        Again Faster stands behind our products. Our barbells and rigs 
+        are guaranteed for life, and all products carry a strong <span class="banner__group-heading--gold">warranty</span>. 
+    </h2>
+    {% for block in section.blocks %}
+        <div class="banner">
+            <div class="banner__img-container">
+                <img src="{{ block.settings.image | img_url: 'medium' }}" alt="" class="banner__img">
+            </div>
+            <div class="banner__details">
+                <h4 class="h4 banner__details-title">
+                    {{ block.settings.title }}
+                </h4>
+                <p class="p">
+                    {{ block.settings.text }}
+                </p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{%schema%}
+    {
+        "name":"Banners",
+        "settings":[
+            {
+                "type":"text",
+                "id":"heading_small",
+                "default":"Your section's small heading",
+                "label":"section.heading_small.label"
+            },
+            {
+                "type":"text",
+                "id":"heading_big",
+                "default":"Your section's big heading",
+                "label":"section.heading_big.label"
+            }
+        ],
+        "blocks":[
+            {
+                "type":"banner",
+                "name":"banner", 
+                "settings":[
+                    {
+                        "type":"text",
+                        "id":"title",
+                        "default":"Your banner's title",
+                        "label":"banner.heading.label"
+                    },
+                    {
+                        "type":"text",
+                        "id":"text",
+                        "default":"Your banner's text",
+                        "label":"banner.text.label"
+                    },
+                    {
+                        "type":"image_picker",
+                        "id":"image",
+                        "label":"banner.image.label"
+                    }
+                ]
+            }
+        ]
+    }
+{%endschema%}
