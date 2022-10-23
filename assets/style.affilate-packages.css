@@ -7,6 +7,7 @@
 .affilate-packages__desc {
     text-align: center;
     margin: 24px 0 41px;
+
 }
 .affilate-packages__grid {
     display: grid;
@@ -37,7 +38,7 @@
 .affilate-packages__grid .grid__item .viewmore {
     color: #000000;
     border-bottom: 1px solid black;
-    padding-bottom: 3px ;
+    padding-bottom: 3px;
 
 }
 .affilate-packages .hide_btn {
