@@ -61,44 +61,6 @@
 {{ "script.cart.js" | asset_url | script_tag }}
 
 
-<script>
-  // async function getP() {
-  //   fetch("https://api.rechargeapps.com/products", {
-  //   method: "GET",
-  //   headers: {
-  //     "X-Recharge-Version": "2021-11",
-  //     "X-Recharge-Access-Token": "sk_1x1_b5116242cc31ee5f370e91f4bbb994f6410c27c48a61041c0d7ba7ca7c6f3ee6"
-  //   }
-  // }).then((response) => {      
-  //     return response.json();
-  //   })
-  //   .then((data) => {    
-  //     console.log(data);    
-
-  //   })
-  // }
-  // getP()
-
-
-//   let schema = '{ "customer": {}, "products": { "base_source": "store_settings", "page": 1, "limit": 15 }, "products_count": { "base_source": "store_settings" }, "settings": {}, "store": {} }';
-//   let url = `{{ shopify_proxy_url if proxy_redirect else "" }}/portal/{{ customer.hash }}/request_objects?token=sk_1x1_b5116242cc31ee5f370e91f4bbb994f6410c27c48a61041c0d7ba7ca7c6f3ee6&schema=${schema}`;
-
-// fetch(url)
-//   .then((response) => response.json())
-//   .then((showData) => {
-//     // Successful request made
-//     console.log(showData);
-//   })
-//   .catch((error) => {
-//     // Request failed
-//     console.error(error);
-//   });
-
-
-
-
-
-</script>
 
 </body>
 </html>
