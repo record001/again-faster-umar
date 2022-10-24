@@ -30,7 +30,6 @@ a {
 h1,
 .h1 {
   font-family: var(--primary-font-family);
-  font-display: swap;
   font-weight: 700;
   font-size: 60px;
   line-height: 130%;
@@ -40,7 +39,6 @@ h1,
 h2,
 .h2 {
   font-family: var(--primary-font-family);
-  font-display: swap;
   font-weight: 700;
   font-size: 40px;
   line-height: 143%;
@@ -50,7 +48,6 @@ h2,
 h3,
 .h3 {
   font-family: var(--primary-font-family);
-  font-display: swap;
   font-weight: 600;
   font-size: 24px;
   line-height: 130%;
@@ -60,7 +57,6 @@ h3,
 h4,
 .h4 {
   font-family: var(--primary-font-family);
-  font-display: swap;
   font-weight: 400;
   font-size: 16px;
   line-height: 168%;
@@ -79,14 +75,12 @@ h5,
 p,
 .p {
   font-family: var(--primary-font-family);
-  font-display: swap;
   font-weight: 400;
   font-size: 14px;
   line-height: 167.5%;
 }
 .p2 {
   font-family: var(--primary-font-family);
-  font-display: swap;
   font-weight: 400;
   font-size: 12px;
   line-height: 167.5%;
@@ -103,7 +97,6 @@ p,
   justify-content: center;
 
   font-family: var(--primary-font-family);
-  font-display: swap;
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
@@ -135,7 +128,6 @@ p,
   justify-content: center;
 
   font-family: var(--primary-font-family);
-  font-display: swap;
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
