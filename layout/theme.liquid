@@ -27,8 +27,8 @@
   <!-- {{ "style.fonts.css" | asset_url | stylesheet_tag}} -->
 
   <!-- {{ "style.base.css" | asset_url | stylesheet_tag }} -->
-  <link rel="stylesheet" href="{{ "style.base.css" | asset_url }}">
-  <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <!-- <link rel="stylesheet" href="{{ "style.base.css" | asset_url }}"> -->
+  <link rel="preload" href="{{ "style.base.css" | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
     <link rel="stylesheet" href="styles.css">
   </noscript>
