@@ -30,7 +30,7 @@
   <!-- <link rel="stylesheet" href="{{ "style.base.css" | asset_url }}"> -->
   <link rel="preload" href="{{ "style.base.css" | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ "style.base.css" | asset_url }}">
   </noscript>
   {{ "style.card.css" | asset_url | stylesheet_tag }}
   {{ "style.yotpo.css" | asset_url | stylesheet_tag }}
