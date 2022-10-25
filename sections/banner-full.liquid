@@ -18,7 +18,7 @@
             {% endif %}
 
             {% if section.settings.full_banner_cta !=blank %}
-            <a class="p2 full-banner__cta" href="{{ section.settings.full_banner_cta_url }}" >{{ section.settings.full_banner_cta }}
+            <a class="p2 full-banner__cta" href="{{ section.settings.full_banner_cta_url }}" aria-label="learn more">{{ section.settings.full_banner_cta }}
                {% render "icon-right-arrow" class: "hover-arrow" %}
             </a>
             {% endif %}
