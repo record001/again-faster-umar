@@ -45,7 +45,7 @@
             {% assign selected_handles =  collection.metafields.accentuate.collections_for_alter | split: '|'  %}
             {% for collection in selected_handles %}    
                     <div class="grid__item">
-                        <a href="{{collections[collection].url}}"><img src="{{ collections[collection].image | img_url: 'medium' }}" alt=""></a>
+                        <a href="{{collections[collection].url}}" aria-label="learn more"><img src="{{ collections[collection].image | img_url: 'medium' }}" alt="img"></a>
                         
                         <h4>{{ collections[collection].title | link_to: collections[collection].url}}
                             {% render "icon-right-arrow", class: "hover-arrow" %}
