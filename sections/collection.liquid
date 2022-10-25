@@ -19,7 +19,7 @@
             
               <li class="nav__item">
                  <a href="{{col.url}}" 
-                   id="{% if collection.title == col.title -%}active{%- endif %}">
+                   id="{% if collection.title == col.title -%}active{%- endif %}" aria-label="{{col.title}}">
                   {{col.title}}                   
                 </a>  
                 <span class="slash">/</span>
