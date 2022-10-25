@@ -4,11 +4,11 @@
   <div class="container">  
     <div class="header__nav__grid">
 
-    <a class="nav__logo" href="#!"> {% render "icon-logo" %} </a>
+    <a class="nav__logo" href="#!" aria-label="Learn more"> {% render "icon-logo" %} </a>
 
     <ul class="nav__list">
       {% for link in linklists.again-faster.links %}
-         <li class="list__item"><a class="h4 item__link" href="{{ link.url }}">{{ link.title }}</a></li>
+         <li class="list__item"><a class="h4 item__link" href="{{ link.url }}" aria-label="Learn more">{{ link.title }}</a></li>
       {% endfor %}
     </ul>
 
