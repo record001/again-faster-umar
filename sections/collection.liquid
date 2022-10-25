@@ -19,7 +19,7 @@
             
               <li class="nav__item">
                  <a href="{{col.url}}" 
-                   id="{% if collection.title == col.title -%}active{%- endif %}">
+                   id="{% if collection.title == col.title -%}active{%- endif %}" aria-label="{{col.title}}">
                   {{col.title}}                   
                 </a>  
                 <span class="slash">/</span>
@@ -32,7 +32,7 @@
                  
           {% for item in collection.products %}
           <div class="collection__grid__item">
-            <a href="{{ item.url }}">
+            <a href="{{ item.url }}" aria-label="Product">
             <div class="img-wrp">
 
               <div class="badge-wrp">
@@ -50,7 +50,7 @@
                   {% endfor %} 
               </div>                
 
-              <img src="{{ item.images[0] | img_url: 'master'}}" alt="">
+              <img src="{{ item.images[0] | img_url: 'master'}}" alt="img">
             </div>
            
             <h5 class="item__title"> {{ item.title | link_to: item.url }}</h5>

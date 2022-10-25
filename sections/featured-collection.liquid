@@ -9,10 +9,10 @@
           <div class="swiper mySwiper">
             <div class="swiper-wrapper">                
                 {%- for collection in section.settings.collection_list -%}
-              <a href="{{collection.url}}">
+              <a href="{{collection.url}}" aria-label="{{ collection.title  }}">
                 <div class="swiper-slide">                    
                     <img src="{{ collection.image | img_url: 'medium'}}" alt="">    
-                   <a href="{{ collection.url }}" class="h5 featured-collection__title"> 
+                   <a href="{{ collection.url }}" class="h5 featured-collection__title" aria-label="{{ collection.title  }}"> 
                     {{ collection.title  }}
                     {% render "icon-right-arrow", class: "hover-arrow" %}
                    </a>
