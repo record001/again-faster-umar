@@ -33,6 +33,120 @@
   border-bottom: 2px solid #ffffff;
 
 }
+/* filter style start */
+.collection-filter__grid {
+  display: grid;
+  grid-template-columns: 15% 1fr;
+  gap: 0 1%;
+  font-family: var(--primary-font-family);
+
+}
+.filter-form {
+  position: sticky;
+  top: 10px;
+  height: fit-content;
+}
+.active-filters {
+  width: 70%;
+  display: flex;
+  align-items: center;
+}
+.active-filters a {
+  font-family: var(--primary-font-family);
+  color: var(--color-black);
+  background-color: #D6D6D6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  padding: 5px 10px;
+  margin-left: 20px;
+}
+.x-icon {
+  margin-left: 20px;
+}
+.active-filters .active-filters__clear { 
+  background-color: #777777;
+    color: var(--color-white);
+    margin: 0;
+}
+.filter-group-summary {
+ list-style: none;
+
+}
+.filter-arrow {
+  pointer-events: none;
+  transition: 300ms;
+}
+.rotate {
+  transition: 300ms;
+  transform: rotate(90deg);
+}
+.filter-option-label {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.filter-group {
+  margin-bottom: 20px;
+}
+ .filter-group-summary .filter-title {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+ 
+}
+
+.filter-group-display__price-range {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.filter-group-display__price-range input{
+ width: 70px;
+}
+.price-submit-btn {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  width: 100%;
+  height: 28px;
+  padding: 4px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  cursor: pointer;
+  border: 1px solid var(--color-white);
+  transition: 300ms;
+}
+.price-submit-btn:hover {
+  transition: 300ms;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
+
+}
+.sort-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0  auto 20px;
+
+}
+#sort-by {
+  width: 150px;
+  height: 40px;
+  padding: 5px 10px;
+  border: 1px solid #777777;
+}
+.sort-by__option {
+  margin-bottom: 10px;
+  display: block;
+}
+/* filter style end */
+
 
 .collection__grid {
   display: grid;
