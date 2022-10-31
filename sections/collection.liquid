@@ -9,10 +9,10 @@
   }
 </style>
 
+
 <div class="collection">
     <div class="container">
-       <h3 class="collection__title"> {{ collection.title }} </h3>
-       
+       <h3 class="collection__title"> {{ collection.title }} </h3>       
 
         <ul class="collection__nav">
             {% for col in section.settings.collection_list %}
@@ -26,8 +26,16 @@
               </li>      
                   
              {% endfor %}
-        </ul>    
+        </ul>
+        <div class="sort-wrapper">
+          {% render "collection-active-filters" %}
+          {% render "collection-sort_by" %}       
+        </div>
 
+      <div class="collection-filter__grid">
+        {% render "collection-filters" %}
+        
+       
         <div class="collection__grid">
                  
           {% for item in collection.products %}
@@ -64,8 +72,11 @@
 
           
         </div>
+      </div>  
     </div>     
 </div>
+
+
 
 {% schema %}
 {
@@ -118,4 +129,12 @@
       
    ]
 }
+
+
+
+
 {% endschema %}
+
+
+
+

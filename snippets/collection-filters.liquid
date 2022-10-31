@@ -1,0 +1,113 @@
+<form class="filter-form">
+ 
+    {%- for filter in collection.filters -%}
+      <details class="filter-group">
+        <summary class="filter-group-summary">
+        
+            <span class="filter-title">{{ filter.label }}
+              <span class="filter-arrow">➤</span> 
+            </span>
+            
+          <!--   
+            {%- if filter.active_values.size > 0 -%}
+              <span>({{ filter.active_values.size }})</span>
+            {%- endif -%} -->
+         
+        </summary>
+  
+        <div class="filter-group-display">
+          <!-- <div class="filter-group-display__header">
+            <span class="filter-group-display__header-selected">{{ filter.active_values.size }} selected</span>
+  
+            {%- if filter.active_values.size > 0 -%}
+              <a href="{{ filter.url_to_remove }}" class="filter-group-display__header-reset">Reset</a>
+            {%- endif -%}
+          </div> -->
+         
+          {%- case filter.type -%}
+            {%- when 'boolean' or 'list' -%}
+              <ul class="filter-group-display__list">
+                {%- for filter_value in filter.values -%}
+                  <li class="filter-group-display__list-item">
+                    <label class="filter-options" for="Filter-{{ filter.param_name }}-{{ forloop.index }}">
+                    <input type="checkbox"
+                      name="{{ filter_value.param_name }}"
+                      value="{{ filter_value.value }}"
+                      id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                      {% if filter_value.active -%}checked{%- endif %}
+                      {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}
+                    >
+                    <input class="filter-option-label" type="submit"  value="{{ filter_value.label }}">
+                  </label>
+                  </li>
+                {%- endfor -%}
+              </ul>
+  
+              <!-- <div class="filter-group-display__submit">
+                <input type="submit" value="Apply">
+              </div> -->
+            {%- when 'price_range' -%}
+              <div class="filter-group-display__price-range">
+                <div class="filter-group-display__price-range-from">
+                  <!-- <span>{{ cart.currency.symbol }}</span> -->
+  
+                  <input name="{{ filter.min_value.param_name }}"
+                    id="Filter-{{ filter.min_value.param_name }}"
+                    {% if filter.min_value.value -%}
+                      value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
+                    {%- endif %}
+                    type="number"
+                    placeholder="0"
+                    min="0"
+                    max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                  >
+  
+                  <!-- <label for="Filter-{{ filter.min_value.param_name }}">From</label> -->
+                </div>
+                <span>to</span>
+                <div class="filter-group-display__price-range-to">
+                  <!-- <span>{{ cart.currency.symbol }}</span> -->
+  
+                  <input name="{{ filter.max_value.param_name }}"
+                    id="Filter-{{ filter.max_value.param_name }}"
+                    {% if filter.max_value.value -%}
+                      value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
+                    {%- endif %}
+                    type="number"
+                    placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                    min="0"
+                    max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                  >
+  
+                  <!-- <label for="Filter-{{ filter.max_value.param_name }}">To</label> -->
+                </div>
+              </div>
+  
+              <div class="filter-group-display__submit">
+                <input class="price-submit-btn" type="submit" value="Apply">
+              </div>
+          {%- endcase -%}
+        </div>
+      </details>
+    {%- endfor -%}
+  
+</form>
+  
+<script>
+  let filter_title = document.querySelectorAll(".filter-title")
+  filter_title.forEach(item => {
+    item.addEventListener("click",  e=> {     
+      e.target.firstElementChild.classList.toggle("rotate")
+
+    })
+  })
+
+  let filter_option_label = document.querySelectorAll(".filter-option-label")
+  filter_option_label.forEach(item => {
+    item.addEventListener("click", e=> {
+      e.target.previousElementSibling.checked = !e.target.previousElementSibling.checked
+     
+    })
+  })
+
+</script>
