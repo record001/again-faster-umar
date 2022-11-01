@@ -80,34 +80,34 @@
 </style>
 
 <div class="login">
-  <h3>Login</h3>
+  <h3>{{ 'general.login.heading' | t }}</h3>
   {% form 'customer_login', return_to: routes.all_products_collection_url %}
   
   {{ form.errors | default_errors }}
     <div class="email-wrp">
-      <label for="customer_email">Email</label>
+      <label for="customer_email">{{ 'general.login.email' | t }}</label>
       <input type="email" name="customer[email]" placeholder="andy@avexdesigns.com"
       {% if    form.errors | default_errors  %} class="red_border" {% endif %} 
       />
     </div>
 
     <div class="password-wrp">
-      <label for="customer_password">Password</label>
+      <label for="customer_password">{{ 'general.login.password' | t }}</label>
       <input type="password" name="customer[password]"
       {% if    form.errors | default_errors  %} class="red_border" {% endif %}   
       />
     </div>
-    <p class="forget_password" >Forgot password?</p>
+    <p class="forget_password" >{{ 'general.login.forgot_password' | t }}</p>
 
     {% if    form.errors | default_errors  %}
-        <span class="p2 error_massage">Wrong email or password, please retry with correct information</span>
+        <span class="p2 error_massage">{{'general.login.wrong_email_massage' | t }}</span>
     {% endif %} 
 
     {% render "submit-btn", text: "log in" %}
   
   {% endform %}
 
-  <p>Don’t have an account yet?</p>
+  <p>{{'general.login.not_have_account' | t }}</p>
   
   {% render "redirect-btn", text: "Create an account", link: routes.account_register_url %}
 </div>
@@ -115,14 +115,14 @@
 <!-- recover_customer_password -->
 
 <div class="recover">
-  <h3>Reset Password</h3>
-  <p>Enter your email below to receive an email to reset your password.</p>
+  <h3>{{'general.login.reset_password' | t }}</h3>
+  <p>{{'general.login.enter_your_email' | t }}</p>
 
   {% form 'recover_customer_password' %}
   {{ form.errors | default_errors }}
 
   <div class="email-wrp">
-    <label for="email">Email</label>
+    <label for="email">{{'general.login.email' | t }}</label>
     <input type="email" name="email">
   </div>
 

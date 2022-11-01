@@ -1,6 +1,6 @@
 
     <div class="active-filters">
-        <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}" class="active-filters__clear">Clear all</a>
+        <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}" class="active-filters__clear">{{ 'general.product_list_page.clear_all' | t }}</a>
     
         {%- for filter in collection.filters -%}
           {%- if filter.type == "price_range" -%}
