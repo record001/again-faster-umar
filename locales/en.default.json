@@ -1,8 +1,50 @@
 {
   "general": {
-    "404": {
-      "title": "Not found",
-      "subtext_html": "The page you were looking for does not exist"
+    "product_list_page": {
+      "clear_all": "Clear all"      
+    },
+    "product_detail_page": {
+      "affirm_text":"pay as low as 56/mo Learn More",
+      "one_time_purchase":"One-Time Purchase",
+      "subscribe":"Subscribe & Save",
+      "free_shipping":"Available for Free shipping!",
+      "add_to_cart" : "ADD TO CART",
+      "frequently_bought_with":"FREQUENTLY BOUGHT WITH"
+    },
+    "footer": {
+      "input_placeholder":"Enter your email",
+      "copyright":"©2020 AGAIN FASTER. ALL RIGHTS RESERVED"
+    },
+    "cart":{
+      "cart_title":"My cart",
+      "subtotal": "subtotal",
+      "calculate_checkout": "Tax and shipping calculates at checkout.",
+      "continue_to_checkout":"Continue to Checkout",
+      "empty_cart_text":"Your Cart is Empty",
+      "shop_best_seller":"Shop Best Sellers"
+    },
+    "login": {
+      "heading":"login",
+      "email":"email",
+      "password":"password",
+      "forgot_password":"Forgot password?",
+      "wrong_email_massage":"Wrong email or password, please retry with correct information",
+      "not_have_account":"Don’t have an account yet?",
+      "reset_password":"Reset Password",
+      "enter_your_email":"Enter your email below to receive an email to reset your password."
+    },
+    "register": {
+      "heading":"Create an Account",
+      "heading2":"Reset Password",
+      "first_name":"First Name",
+      "last_name":"Last Name",
+      "email_address":"Email Address",
+      "password":"password",
+      "confirm_password":"Confirm Password",
+      "already_havea_account":"Already have an account?"
+
     }
+    
   }
+  
 }

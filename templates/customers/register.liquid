@@ -44,42 +44,42 @@
 <div class="register">
 
 
-  <h3>Create an Account</h3>
+  <h3>{{ 'general.register.heading' | t }}</h3>
 {% form 'create_customer' %}
 
   {{ form.errors | default_errors }}
   <div class="fullname-wrp">
     <div class="first_name-wrp">
-      <label for="first_name">First Name</label>
+      <label for="first_name">{{ 'general.register.first_name' | t }}</label>
       <input type="text" name="customer[first_name]" placeholder="Andy"/>
     </div>
     
     <div class="last_name-wrp">
-      <label for="last_name">Last Name</label>
+      <label for="last_name">{{ 'general.register.last_name' | t }}</label>
       <input type="text"  name="customer[last_name]" placeholder="Smith" />
     </div>
   </div>
   
   <div class="email-wrp">
-    <label for="email">Email Address</label>
+    <label for="email">{{ 'general.register.email_address' | t }}</label>
     <input type="email"  name="customer[email]" size="30" placeholder="andy@avexdesigns.com"/>
 
   </div>
 
   <div class="password-wrp">
-    <label for="password">Password</label>
+    <label for="password">{{ 'general.register.password' | t }}</label>
     <input type="password"  name="customer[password]" size="30" />
 
   </div>
   <div class="password-wrp confirm">
-    <label for="password_confirmation">Confirm Password</label>
+    <label for="password_confirmation">{{ 'general.register.confirm_password' | t }}</label>
     <input type="password"   name="customer[password_confirmation]" size="30" />
 
   </div>
 
   {% render "submit-btn", text: "Create an Account" %}
 
-  <p>Already have an account?</p>
+  <p>{{ 'general.register.already_havea_account' | t }}</p>
 
   {% render "redirect-btn", text: "log in", link: routes.account_login_url %}
 

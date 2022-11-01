@@ -34,7 +34,7 @@
           </div>
           <div class="review">
            <img src="https://cdn.shopify.com/s/files/1/0625/1184/1457/files/affirm.svg?v=1666009227" alt="affirm">
-              <p>pay as low as 56/mo Learn More</p>
+              <p>{{ 'general.product_detail_page.affirm_text' | t }}</p>
           </div>
 
           <p>
@@ -73,13 +73,13 @@
                     <label class="recharge-label">
                       <input id="one-time-purchase" class="recharge-option" type="radio" name="one" 
                       checked>
-                      <span class="recharge-text">One-Time Purchase</span>
+                      <span class="recharge-text">{{ 'general.product_detail_page.one_time_purchase' | t }}</span>
                     </label>  
                                       
                     <label class="recharge-label">
                     
                       <input id="subscribe" class="recharge-option" type="radio" name="one" value="subscribe"> 
-                      <span class="recharge-text">Subscribe & Save 
+                      <span class="recharge-text">{{ 'general.product_detail_page.subscribe' | t }}
                         <span class="subscribe-price" id="{{product.selling_plan_groups[0].selling_plans[0].price_adjustments[0].value}}">sa</span>   
                       </span>
                     </label>
@@ -103,8 +103,8 @@
                   
               {% endif %} 
 
-              <p class="free-shipping">Available for Free shipping!</p>
-              <button id="add_card_btn" type="submit" class="p2 add-card-btn" >Add to cart</button>
+              <p class="free-shipping">{{ 'general.product_detail_page.free_shipping' | t }}</p>
+              <button id="add_card_btn" type="submit" class="p2 add-card-btn" >{{ 'general.product_detail_page.add_to_cart' | t }}</button>
         
           </form>
 
@@ -112,7 +112,7 @@
           {% if frequent_product.size >0 %}
             
           
-          <h4>Frequently bought with</h4>
+          <h4>{{ 'general.product_detail_page.frequently_bought_with' | t }}</h4>
           <div class="frequently-bought-with">
             {% for product in frequent_product %}          
             
@@ -123,7 +123,7 @@
               <div class="card-context">
                 <p> {{ all_products[product].title }}</p>
                 <button  class="fbw_add_to_cart"
-                 value="{{ all_products[product].selected_or_first_available_variant.id }}" >Add to Cart</button>
+                 value="{{ all_products[product].selected_or_first_available_variant.id }}" >{{ 'general.product_detail_page.add_to_cart' | t }}</button>
               </div>
             </div>
                        

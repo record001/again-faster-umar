@@ -1,7 +1,7 @@
  <div class="blur"> </div>
  <div class="cart">
         <img class="close__cart" src="{{ "x.svg" | asset_url }}" alt="">
-        <h4 class="cart__title"> My Cart</h4>
+        <h4 class="cart__title"> {{ 'general.cart.cart_title' | t }}</h4>
        
   
    
@@ -38,16 +38,16 @@
 
           <div class="cart__footer">
               <div class="subtotal-price">
-                <h4>subtotal</h4>
+                <h4>{{ 'general.cart.subtotal' | t }}</h4>
                 <p id="total_price"></p>
               </div>
-              <p>Tax and shipping calculates at checkout.</p>
+              <p>{{ 'general.cart.calculate_checkout' | t }}</p>
               <div class="cart__affirm">
                 <img src="https://cdn.shopify.com/s/files/1/0625/1184/1457/files/affirm.svg?v=1666009227" alt="affirm">
                  <p>pay as low as 56/mo <a href="#!">Learn More</a> </p>
               </div>
 
-              <a href="https://again-faster-umar.myshopify.com/62511841457/checkouts/6df1f721aec1abf833c1bad82f3a1902" class="checkout">Continue to Checkout</a>
+              <a href="https://again-faster-umar.myshopify.com/62511841457/checkouts/6df1f721aec1abf833c1bad82f3a1902" class="checkout">{{ 'general.cart.continue_to_checkout' | t }}</a>
           </div>
 
     </div>
@@ -55,8 +55,8 @@
 
 
     <div class="cart__empty">
-        <h4>Your Cart is Empty</h4>
-        <button>Shop Best Sellers</button>
+        <h4>{{ 'general.cart.empty_cart_text' | t }}</h4>
+        <button>{{ 'general.cart.shop_best_seller' | t }}</button>
     </div>
   
        
