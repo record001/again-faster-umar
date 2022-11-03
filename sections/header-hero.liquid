@@ -15,6 +15,23 @@
     </div>     
 </div>
 
+<script>
+  const query = `
+    {
+      products(first: 10) {
+      	nodes {
+          title
+        }
+      }
+    }
+`
+
+fetch("/api/2022-10/graphql.json", {
+    method: "POST",
+    body: query
+})
+</script>
+
 <style>
     .header-hero {
         background-image: url('{{ section.settings.header_hero_bg.src | img_url : "2280x" }}');
