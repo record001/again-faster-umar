@@ -27,6 +27,9 @@
 `
 
 fetch("/api/2022-10/graphql.json", {
+    headers: {
+      "Content-Type": "application/json"
+    },
     method: "POST",
     body: query
 }).then(res => res.json()).then((data) => console.log(data));
