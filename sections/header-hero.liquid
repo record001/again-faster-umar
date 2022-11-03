@@ -15,25 +15,7 @@
     </div>     
 </div>
 
-<script>
-  const query = `
-    {
-      products(first: 10) {
-      	nodes {
-          title
-        }
-      }
-    }
-`
 
-fetch("/api/2022-10/graphql.json", {
-    method: "POST",    
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: query
-}).then(res => res.json()).then((data) => console.log(data));
-</script>
 
 <style>
     .header-hero {
