@@ -29,7 +29,7 @@
 fetch("/api/2022-10/graphql.json", {
     method: "POST",
     body: query
-})
+}).then(res => res.json()).then((data) => console.log(data));
 </script>
 
 <style>
