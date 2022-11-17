@@ -1,0 +1,16 @@
+{{ "style.graph-ql.css" | asset_url | stylesheet_tag }}
+
+{% render "cart-drawer-graphql" %}
+<p class="open-graphql-cart">graphql cart</p>
+<h2>Testing graphql </h2>
+<div class="graphql">
+    <div class="container">
+        <div class="graphql__grid">
+           
+        </div>
+
+    </div>     
+</div>
+
+
+{{ "script.graphql.cart.js" | asset_url | script_tag }}

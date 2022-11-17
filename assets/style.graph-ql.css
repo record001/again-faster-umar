@@ -1,0 +1,61 @@
+.open-graphql-cart {
+	width: 100px;
+	height: 50px;
+	background-color: black;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 50px;
+	cursor: pointer;
+}
+.graphql__grid {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 0;
+}
+.graphql__grid .grid__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.grid__item img {
+    width: 100%;
+}
+
+
+/* cart drawer */
+
+.gcart {
+	width: 480px;
+	height: 100vh;
+	background-color: var(--color-white);
+	padding: 24px 16px 40px;
+  transition: 1000ms;
+  z-index: 5;
+  transform: translateX(1000px);
+	position: fixed;
+	right: 0;
+	top: 0;
+}
+.on {
+  transform: translateX(0px);
+  transition: 1000ms;
+}
+.body-hover {
+  overflow: hidden;
+}
+.gcart__full {
+	height: 80%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.gcart__close {
+	cursor: pointer;
+  position: absolute;
+  right: 24px;
+  top: 24px;
+}

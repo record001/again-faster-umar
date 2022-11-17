@@ -2,8 +2,11 @@
     "sections":{
         "collection-alternate":{
             "type":"collection-alternate"
+        },
+        "collection-graphql":{
+            "type":"collection-graphql"
         }
     },
-    "order":["collection-alternate"]
+    "order":["collection-alternate","collection-graphql"]
 }
  
