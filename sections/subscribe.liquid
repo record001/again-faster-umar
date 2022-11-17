@@ -1,0 +1,89 @@
+<!-- /templates/customers/register.liquid -->
+<style>
+    .register {
+      width: 442px;
+      padding: 80px 0 120px;
+      margin: 0 auto;
+    }
+    .register h3 {
+      margin-bottom: 63px;
+      text-align: center;
+    }
+    .register p {
+      text-align: center;
+      color: #000000;
+      padding: 24px 0 40px;
+    }
+    .fullname-wrp {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 16px;
+    }
+    .register label {
+       font-family: var(--primary-font-family);
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 167.5%;
+      color: #000000;
+    }
+    .register input {
+      width: 100%;
+      border: none;
+      padding:8px 0 12px;
+      border-bottom: 1px solid #C4C4C4;
+    }
+    .register .email-wrp, .password-wrp {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+    .register .confirm {
+      margin-bottom: 40px;
+    }
+  </style>
+  <div class="register">
+  
+  
+    <h3>{{ 'general.register.heading' | t }}</h3>
+  
+  <form id="register">
+  
+    <div class="fullname-wrp">
+      <div class="first_name-wrp">
+        <label for="first_name">{{ 'general.register.first_name' | t }}</label>
+        <input type="text"  placeholder="Andy"/>
+      </div>
+      
+      <div class="last_name-wrp">
+        <label for="last_name">{{ 'general.register.last_name' | t }}</label>
+        <input type="text"   placeholder="Smith" />
+      </div>
+    </div>
+    
+    <div class="email-wrp">
+      <label for="email">{{ 'general.register.email_address' | t }}</label>
+      <input type="email"   size="30" placeholder="andy@avexdesigns.com"/>
+  
+    </div>
+  
+    <div class="password-wrp">
+      <label for="password">{{ 'general.register.password' | t }}</label>
+      <input type="password"   size="30" />
+  
+    </div>
+    <div class="password-wrp confirm">
+      <label for="password_confirmation">{{ 'general.register.confirm_password' | t }}</label>
+      <input type="password"    size="30" />
+  
+    </div>
+  
+    {% render "submit-btn", text: "Create an Account" %}
+  
+    <p>{{ 'general.register.already_havea_account' | t }}</p>
+  
+    {% render "redirect-btn", text: "log in", link: routes.account_login_url %}
+  
+</form>
+  
+  </div>
+  

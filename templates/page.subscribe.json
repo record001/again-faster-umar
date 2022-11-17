@@ -1,0 +1,10 @@
+{
+    "sections":{
+        "subscribe": {
+            "type":"subscribe"
+        }
+    },
+    "order":["subscribe"]
+
+    
+}
