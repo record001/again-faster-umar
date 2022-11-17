@@ -9,7 +9,7 @@
 
                     <h5><span>/</span>{{ collection.metafields.accentuate.eyebrow }}</h5>
                     <h2>{{ collection.metafields.accentuate.title}}</h2>
-                    <a href="{{ collection.metafields.accentuate.cta_url }}" class="p2">{{collection.metafields.accentuate.cta_label }}
+                    <a href="{{ collection.metafields.accentuate.cta_url }}" aria-label="learn more" class="p2">{{collection.metafields.accentuate.cta_label }}
                         {% render "icon-right-arrow", class: "black" %}
                     </a>
                 </div>
@@ -42,7 +42,7 @@
             {% assign selected_handles =  collection.metafields.accentuate.collections_for_alter | split: '|'  %}
             {% for collection in selected_handles %}    
                     <div class="grid__item">
-                        <a href="{{collections[collection].url}}"><img src="{{ collections[collection].image | img_url: 'medium' }}" alt=""></a>
+                        <a href="{{collections[collection].url}}" aria-label="learn more"><img src="{{ collections[collection].image | img_url: 'medium' }}" alt="img"></a>
                         
                         <h4>{{ collections[collection].title | link_to: collections[collection].url}}
                             {% render "icon-right-arrow", class: "hover-arrow" %}

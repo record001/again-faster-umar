@@ -1,10 +1,10 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <title>{{ page_title }}</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="description" content="{{ page_description | escape }}">
+  <meta name="description" content="Again Faster web site for sport equipments">
   <link rel="canonical" href="{{ canonical_url }}">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   {{ content_for_header }} <!-- Header hook for plugins --> 
@@ -26,7 +26,13 @@
   <!-- fonts.css is not used, instate theme settings is used above-->
   {{ "style.fonts.css" | asset_url | stylesheet_tag}}
 
-  {{ "style.base.css" | asset_url | stylesheet_tag }}
+ 
+  <!-- <link rel="stylesheet" href="{{ "style.base.css" | asset_url }}"> -->
+  <link rel="preload" href="{{ "style.base.css" | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="{{ "style.base.css" | asset_url }}">
+  </noscript>
+  
   {{ "style.card.css" | asset_url | stylesheet_tag }}
   {{ "style.yotpo.css" | asset_url | stylesheet_tag }}
  
@@ -56,44 +62,6 @@
 {{ "script.cart.js" | asset_url | script_tag }}
 
 
-<script>
-  // async function getP() {
-  //   fetch("https://api.rechargeapps.com/products", {
-  //   method: "GET",
-  //   headers: {
-  //     "X-Recharge-Version": "2021-11",
-  //     "X-Recharge-Access-Token": "sk_1x1_b5116242cc31ee5f370e91f4bbb994f6410c27c48a61041c0d7ba7ca7c6f3ee6"
-  //   }
-  // }).then((response) => {      
-  //     return response.json();
-  //   })
-  //   .then((data) => {    
-  //     console.log(data);    
-
-  //   })
-  // }
-  // getP()
-
-
-//   let schema = '{ "customer": {}, "products": { "base_source": "store_settings", "page": 1, "limit": 15 }, "products_count": { "base_source": "store_settings" }, "settings": {}, "store": {} }';
-//   let url = `{{ shopify_proxy_url if proxy_redirect else "" }}/portal/{{ customer.hash }}/request_objects?token=sk_1x1_b5116242cc31ee5f370e91f4bbb994f6410c27c48a61041c0d7ba7ca7c6f3ee6&schema=${schema}`;
-
-// fetch(url)
-//   .then((response) => response.json())
-//   .then((showData) => {
-//     // Successful request made
-//     console.log(showData);
-//   })
-//   .catch((error) => {
-//     // Request failed
-//     console.error(error);
-//   });
-
-
-
-
-
-</script>
 
 </body>
 </html>
