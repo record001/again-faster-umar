@@ -5,27 +5,27 @@ let close_cart = document.querySelector(".close__cart")
 let body = document.querySelector("body")
 let cart_blur = document.querySelector(".blur")
 
-// function toggleCart() {
-//   cart.classList.toggle("on");
-//   body.classList.add("body-hover");
-//   cart_blur.classList.add("db");
-// }
+function toggleCart() {
+  cart.classList.toggle("on");
+  body.classList.add("body-hover");
+  cart_blur.classList.add("db");
+}
 
-// bag.addEventListener("click", e=> {
-//     toggleCart()
-//   })
-// close_cart.addEventListener("click", e=> {
-//     cart.classList.remove("on")
-//     body.classList.remove("body-hover")
-//     cart_blur.classList.remove("db")
+bag.addEventListener("click", e=> {
+    toggleCart()
+  })
+close_cart.addEventListener("click", e=> {
+    cart.classList.remove("on")
+    body.classList.remove("body-hover")
+    cart_blur.classList.remove("db")
 
-//   })
+  })
 
-// cart_blur.addEventListener("click", e=> {
-//     cart.classList.remove("on")
-//     body.classList.remove("body-hover")
-//     cart_blur.classList.remove("db")
-//   })
+cart_blur.addEventListener("click", e=> {
+    cart.classList.remove("on")
+    body.classList.remove("body-hover")
+    cart_blur.classList.remove("db")
+  })
 
 
 let cart__content = document.querySelector(".cart__content");
