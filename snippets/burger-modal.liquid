@@ -1,0 +1,8 @@
+<div class="modal">
+  <ul class="modal__list">
+    
+    {% for link in linklists.again-faster.links %}
+         <li class="modal__item"><a class="modal__link" href="{{ link.url }}" aria-label="Learn more">{{ link.title }}</a></li>
+      {% endfor %}
+  </ul>
+</div>

@@ -84,3 +84,24 @@
 .banner__image img {
   max-width: 100%;
 }
+
+@media (max-width:768px) {
+  .banner__grid {
+    flex-direction: column;
+  }
+  .banner__content  {
+    width: 100%;
+    padding: 54px 40px 0 40px;
+  }
+  .banner__image {
+    width: 100%;
+    text-align: center;
+  }
+  .banner__grid:nth-of-type(2n) {
+    flex-direction: column-reverse;
+    margin-bottom: 20px;
+  }
+  .banner__content h2 {
+    margin-bottom: 24px;
+  }
+}

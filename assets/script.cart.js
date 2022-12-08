@@ -236,3 +236,22 @@ form?.addEventListener("submit", (e) => {
 
 
 getDetails()
+
+
+
+let modal = document.querySelector(".modal");
+let modal_link = document.querySelectorAll(".modal__link")
+let burger = document.querySelector(".burger")
+
+// burger
+function myFunction(x) {
+  x.classList.toggle("change");
+  modal.classList.toggle("active");
+}
+
+modal_link.forEach(link => {
+  link.addEventListener("click", ()=>{
+    myFunction(burger)
+    modal.classList.remove("active")
+  })
+})

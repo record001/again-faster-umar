@@ -59,3 +59,12 @@
   right: 24px;
   top: 24px;
 }
+
+
+@media (max-width: 800px) {
+  .graphql__grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 40px 0;
+}
+}

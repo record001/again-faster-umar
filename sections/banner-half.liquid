@@ -10,11 +10,21 @@
 
     <div class="half-banner__card">
         <img src="{{ section.settings.half_banner_card_img | img_url: "462x" }}" alt="img">
-        <h5>{{ section.settings.half_banner_card_subtitle }}</h5>
-        <h3>{{ section.settings.half_banner_card_title }}</h3>
-        <p>{{ section.settings.half_banner_card_desc }}</p>
-        <a href="#!" class="p2" aria-label="learn more">{{ section.settings.half_banner_card_cta }}</a>
+        <div class="card__content">
+            <h5>{{ section.settings.half_banner_card_subtitle }}</h5>
+            <h3>{{ section.settings.half_banner_card_title }}</h3>
+            <p>{{ section.settings.half_banner_card_desc }}</p>
+            <a href="#!" class="p2" aria-label="learn more">{{ section.settings.half_banner_card_cta }}</a>
+        </div>
+        
     </div>
+
+    <div class="card__content--mobile">
+      <h5>{{ section.settings.half_banner_card_subtitle }}</h5>
+      <h3>{{ section.settings.half_banner_card_title }}</h3>
+      <p>{{ section.settings.half_banner_card_desc }}</p>
+      <a href="#!" class="p2" aria-label="learn more">{{ section.settings.half_banner_card_cta }}</a>
+  </div>
 </div>
 
 {% schema %}
