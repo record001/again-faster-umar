@@ -47,3 +47,17 @@
  align-items: center;
 
 }
+
+@media (max-width: 800px) {
+  .list-collection__grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 40px 0;
+}
+}
+@media (max-width: 500px) {
+  .collection-filter__grid {
+    grid-template-columns: 35% 1fr;
+ 
+}
+}

@@ -205,3 +205,21 @@
   font-weight: 700;
   margin-left: 10px;
 }
+
+@media (max-width:1000px) {
+  .product__datails {
+    padding: 20px 50px 20px 60px;
+}
+}
+@media (max-width:768px) {
+  .product-hero__grid {
+    display: grid;
+    grid-template-columns: 90%;
+}
+
+.product__datails {
+  height: auto;
+  padding: 20px 50px 20px 60px;
+  overflow-y: auto;
+}
+}

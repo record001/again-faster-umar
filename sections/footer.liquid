@@ -9,7 +9,7 @@
 <div class="footer">
     <img class="footer__img" src="{{ section.settings.footer_img | img_url: '449x'}}" alt="footer_img">
     <div class="container">
-        <div class="footer__grid">
+      <div class="footer__grid">
          <div class="footer__form">
                <h4 class="p2">{{ section.settings.newsletter }}</h4>
             {% form 'customer' %}
@@ -32,7 +32,7 @@
          </div>
 
          <ul class="footer__list">
-            <h4 class="footer__list__title">{{ section.settings.footer_nav_first }}</h4>
+            <h4 class="footer__list__title">{{ section.settings.footer_nav_first }} </h4>
             <li class="footer__item"><a class="p footer__link" href="#!" aria-label="Learn more">About Us</a></li>
             <li class="footer__item"><a class="p footer__link" href="#!" aria-label="Learn more">Blog</a></li>
             <li class="footer__item"><a class="p footer__link" href="#!" aria-label="Learn more">Gift Cards</a></li>
@@ -40,6 +40,7 @@
             <li class="footer__item"><a class="p footer__link" href="#!" aria-label="Learn more">Financing</a></li>
             <li class="footer__item"><a class="p footer__link" href="#!" aria-label="Learn more">Retail Store</a></li>
          </ul>
+
          <ul class="footer__list">
             <h4 class="footer__list__title">{{ section.settings.footer_nav_second }}</h4>
             <li class="footer__item"><a class="p footer__link" href="#!" aria-label="Learn more">Introductions</a></li>
@@ -48,13 +49,72 @@
             <li class="footer__item"><a class="p footer__link" href="#!" aria-label="Learn more">Contact Us</a></li>
             <li class="footer__item"><a class="p footer__link" href="#!" aria-label="Learn more">Shop in Store</a></li>
          </ul>
+
+         <div class="accordion">
+     
+            <!-- First accordian  -->
+            <div class="a-container"> 
+                <p class="a-btn h4">
+                  Again faster
+                  <span></span></p>
+                <div class="a-panel">About Us</div>
+                <div class="a-panel">Blog</div>
+                <div class="a-panel">Gift Cards</div>
+                <div class="a-panel">Returns and Warranty</div>
+                <div class="a-panel">Financing</div>
+                <div class="a-panel">Retail Store</div>
+            </div>
+         
+            <!-- Second accordian  -->
+            <div class="a-container"> 
+                <p class="a-btn h4" >   Get help     
+               <span></span></p>
+               <div class="a-panel">Introductions</div>
+               <div class="a-panel">Shipping</div>
+               <div class="a-panel">Gift Cards</div>
+               <div class="a-panel">Returns and Warranty</div>
+               <div class="a-panel">Contact Us</div>
+               <div class="a-panel">Shop in Store</div>
+            </div>
+    
+           
+             
         </div>
+      </div>
 
         <span class="h5 footer__copyright">{{ 'general.footer.copyright' | t }}</span>
 
     </div>     
 </div>
-
+<script>
+    function initAcc(elem, option){
+        //addEventListener on mouse click
+        document.addEventListener('click', function (e) {
+            //check is the right element clicked
+            if (!e.target.matches(elem+' .a-btn')) return;
+            else{
+                //check if element contains active class
+                if(!e.target.parentElement.classList.contains('active')){
+                    if(option==true){
+                         //if option true remove active class from all other accordions 
+                        var elementList = document.querySelectorAll(elem +' .a-container');
+                        Array.prototype.forEach.call(elementList, function (e) {
+                            e.classList.remove('active');
+                        });
+                    }    
+                    //add active class on cliked accordion     
+                    e.target.parentElement.classList.add('active');
+                }else{
+                    //remove active class on cliked accordion     
+                    e.target.parentElement.classList.remove('active');
+                }
+            }
+        });
+    }
+     
+    //activate accordion function
+    initAcc('.accordion', true);
+</script>
 {% schema %}
 {
    "name": "Footer",

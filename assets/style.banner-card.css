@@ -25,3 +25,15 @@
   color: var(--color-black);
 
 }
+
+@media (max-width:500px) {
+  .banner-card__grid {
+   
+    grid-template-columns: 100%;
+    gap: 5% 0;
+}
+.banner-card {
+  padding: 24px 0 50px;
+  
+}
+}

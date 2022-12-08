@@ -46,3 +46,9 @@
   transition: 300ms;
 
 }
+@media(max-width: 500px) {
+  .header-hero__content {
+    width: 90%;
+    left: 28px;
+  }
+}

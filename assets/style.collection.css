@@ -150,7 +150,7 @@
 
 .collection__grid {
   display: grid;
-  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px 16px;
 }
 .badge {
@@ -183,7 +183,7 @@
 
 .collection__grid__item .img-wrp {
   position: relative;
-  /* height: 554px; */
+  height: 554px;
   background-color: #f1f1f1;
 }
 .collection__grid__item .img-wrp img {
@@ -217,4 +217,25 @@
 .slash {
   margin-left: 5px;
   color:#c4c4c4 ;
+}
+
+@media (max-width:1000px) {
+  
+.collection__grid__item .img-wrp {
+  height: 354px;
+}
+}
+@media (max-width:800px) {
+
+  
+.collection__grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+  
+.collection__grid__item .img-wrp {
+  height: 75%;
+}
+.collection__title , .collection__nav{
+  display: none;
+}
 }

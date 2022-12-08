@@ -144,3 +144,137 @@ p,
   border: 1px solid #ffffff;
   transition: 300ms;
 }
+
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  bottom: 0;
+  /* display: none; */
+  -webkit-transform: translateY(-1000px);
+          transform: translateY(-1000px);
+  -webkit-transition: 800ms;
+  transition: 800ms;
+  z-index: 7;
+  width: 100vw;
+  background-color: #889191;
+}
+
+.modal.active {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+.modal__list {
+  width: 40%;
+  margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal .close_btn {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  border: none;
+  padding: 5px;
+  background-color: rgba(24, 26, 26, 0.856);
+  color: white;
+  font-size: 30px;
+}
+
+.modal__link {
+  margin-bottom: 20px;
+  display: block;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 500;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+.modal__link:hover {
+  color: rgba(255, 255, 255, 0.616);
+}
+
+.burger {
+  display: none;
+  position: absolute;
+  left: 25px;
+  top: 50px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.bar {
+  width: 35px;
+  height: 5px;
+  border-radius: 2px;
+  background-color: #000;
+  margin: 6px 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.home .bar {
+  background-color: #fff;
+}
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+@media(max-width: 768px) {
+  h1,
+.h1 {
+  
+  font-size: 52px;
+ 
+}
+h2, .h2 {
+  font-size: 28px;
+}
+.burger {
+  display: block;
+}
+.modal {
+  display: block;
+}
+}
+@media(max-width: 500px) {
+  h1,
+.h1 {
+ 
+  font-size: 40px;
+  
+}
+h3,
+.h3 {
+
+  font-size: 18px;
+  
+}
+
+}

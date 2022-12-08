@@ -27,3 +27,11 @@
   padding-bottom: 40px;
 }
 
+@media (max-width: 500px) {
+  .swiper-slide img {
+    width: 150px;
+  }
+  .featured-collection {
+    padding: 60px 0;
+}
+}

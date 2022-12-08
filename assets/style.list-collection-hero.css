@@ -81,3 +81,58 @@
 .img__small-wpr .img__small {
   width: 100%;
 }
+
+@media (max-width: 1000px) {
+  .list-collection-hero__img {
+    height: 80%;
+    margin-top: 10%;
+}
+
+.list-collection-hero h2 {
+  
+  font-size: 31px;
+  
+}
+}
+@media (max-width: 800px) {
+  .list-collection-hero__img {
+    height: 63%;
+    margin-top: 25%;
+}
+
+.list-collection-hero h2 {
+  
+  font-size: 23px;
+  
+}
+}
+@media (max-width: 700px) {
+  .list-collection-hero__grid {
+  height: calc(100vh - 328px);
+    
+    grid-template-columns: 52% 40%;
+    gap: 0 7%;
+}
+.list-collection-hero__img {
+  height: 60%;
+  margin-top: 35%;
+}
+}
+
+@media (max-width: 500px) {
+  .list-collection-hero__grid {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: space-between;
+}
+.list-collection-hero__grid {
+  height: calc(100vh - 3px);
+  
+}
+.list-collection-hero__img {
+  margin: 0;
+  width: 100%;
+}
+
+}

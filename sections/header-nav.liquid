@@ -1,9 +1,13 @@
 {{ "style.header-nav.css" | asset_url | stylesheet_tag}}
-
+<div class="burger" onclick="myFunction(this)">
+  <div class="bar bar1"></div>
+  <div class="bar bar2"></div>
+  <div class="bar bar3"></div>
+</div>
 <nav class="header__nav">
   <div class="container">  
-    <div class="header__nav__grid">
-
+    <div class="header__nav__grid">      
+      <div class="flex-fixer"></div>
     <a class="nav__logo" href="#!" aria-label="Learn more"> {% render "icon-logo" %} </a>
 
     <ul class="nav__list">
@@ -13,11 +17,11 @@
     </ul>
 
     <div class="nav__cta">
-      <div class="nav__cta__item">
+      <div class="nav__cta__item icon-search">
         {% render "icon-search" %}
       </div>
      
-      <div class="nav__cta__item">
+      <div class="nav__cta__item icon-account">
         <a href="{{ routes.account_url }}" aria-label="Learn more"> {% render "icon-account" %}</a>
        
       </div>
